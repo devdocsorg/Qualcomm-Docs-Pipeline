@@ -80,9 +80,13 @@
 <section id="setup-for-windows-host-10-11-and-snapdragon">
 <h1>Setup for Windows Host (10, 11, and Snapdragon)<a class="headerlink" href="#setup-for-windows-host-10-11-and-snapdragon" title="Link to this heading"></a></h1>
 <p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
-<p>⭐ This guide is for a host machine running Windows 10, 11, or Windows on Snapdragon. If you are using a Linux machine or are using a WSL environment, follow the instructions <a class="reference external" href="https://www.notion.so/QNN-Setup-Rewrite-Linux-6643489a4c4c4bdebb76ecf7fcc4ec73?pvs=21">here</a>.</p>
+<div class="line-block">
+<div class="line">⭐ This guide is for a host machine running Windows 10, 11, or Windows on Snapdragon. If you are using a Linux machine or are using a WSL environment, follow the instructions <a class="reference external" href="https://www.notion.so/QNN-Setup-Rewrite-Linux-6643489a4c4c4bdebb76ecf7fcc4ec73?pvs=21">here</a>.</div>
+</div>
 <p>The QNN SDK allows you to convert an AI model (ex. a ‘.pt’ model from PyTorch) into instructions that can be run on a target device’s various processing units (CPU, GPU, HTP, cDSP, or LPAI).</p>
-<p>⭐ To learn about acronyms which are new to you, see the Glossary.</p>
+<div class="line-block">
+<div class="line">⭐ To learn about acronyms which are new to you, see the Glossary.</div>
+</div>
 <p>You will need to install the following code to use the QNN SDK:</p>
 <ol class="arabic simple">
 <li><p>The QNN SDK binary and its immediate dependencies.</p></li>
@@ -96,7 +100,9 @@
 </li>
 <li><p>Packages / tooling to build the converted models for specific hardware processors (CPU, GPU, HTP, cDSP, or LPAI).</p></li>
 </ol>
-<p>⭐ This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</p>
+<div class="line-block">
+<div class="line">⭐ This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
+</div>
 <p>Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</p>
 <ol class="arabic simple">
 <li><p>Go to the QNN SDK product page: <a class="reference external" href="https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk">https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk</a></p></li>
@@ -163,16 +169,20 @@
 <li><p>Run ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -m’.</p>
 <blockquote>
 <div><p>This will verify that you have installed the Microsoft Visual Studio C++ (MSVC) toolchain successfully.</p>
-<p>⭐ It’s normal to see that only one of “Visual C++(x86)” and “Visual C++(arm64)” is installed. The installed version should match the hardware of your host machine.</p>
+<div class="line-block">
+<div class="line">⭐ It’s normal to see that only one of “Visual C++(x86)” and “Visual C++(arm64)” is installed. The installed version should match the hardware of your host machine.</div>
+</div>
 <p>You should see an output like this:</p>
 </div></blockquote>
 </li>
 </ol>
 <ol class="arabic">
 <li><p>Install QNN SDK dependencies</p></li>
-<li><p>Install Python 3.10.4 - [python.org/downloads/release/python-3104/](<a class="reference external" href="http://python.org/downloads/release/python-3104/">http://python.org/downloads/release/python-3104/</a>)</p>
+<li><p>Install Python 3.10.4 - <a class="reference external" href="http://python.org/downloads/release/python-3104/">http://python.org/downloads/release/python-3104/</a></p>
 <blockquote>
-<div><p>⚠️ Ensure you are downloading the proper version. New releases beyond Python 3.10.4 may not work as expected with the QNN SDK.</p>
+<div><div class="line-block">
+<div class="line">⚠️ Ensure you are downloading the proper version. New releases beyond Python 3.10.4 may not work as expected with the QNN SDK.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Verify the installation worked by running:</p></li>
@@ -181,7 +191,9 @@
 <li><p>Open the folder at ‘QNN_SDK_ROOT’ in Visual Studio.</p></li>
 <li><p>Open a new powershell terminal in Visual Studio by going to the top-menu “Terminal” and clicking “New Terminal”</p>
 <blockquote>
-<div><p>⚠️ Ensure the new terminal is a Powershell instance.</p>
+<div><div class="line-block">
+<div class="line">⚠️ Ensure the new terminal is a Powershell instance.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>From the ‘QNN_SDK_ROOT’ folder, run the following command to create and activate a new virtual environment:</p></li>
@@ -193,21 +205,23 @@
 <li><p>Install Model Frameworks</p></li>
 </ol>
 <p>These are the packages that interpret your ai model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
-<p>⭐ Install any / all of the frameworks you want to use ai models from.
-You can install a package by running ‘pip install package==version’.
-Ex. ‘pip install tensorflow==2.10.1’</p>
 <div class="line-block">
-<div class="line">Package | Version | Description |</div>
-<div class="line">— | — | — |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/torch/">https://pypi.org/project/torch/</a> | 1.13.1 | Use for building and training deep learning models with a focus on flexibility and speed. Used with .pt files. Install by downloading the proper binary <a class="reference external" href="https://pytorch.org/get-started/previous-versions/#v1130">https://pytorch.org/get-started/previous-versions/#v1130</a> if pip install does not work. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/torchvision/">https://pypi.org/project/torchvision/</a>  | 0.14.1 | Use for computer vision tasks with PyTorch, providing datasets, model architectures, and image transforms. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/tensorflow/">https://pypi.org/project/tensorflow/</a> | 2.10.1 | Use for building and training machine learning models, particularly deep learning models. Used with .pb files. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/tflite/">https://pypi.org/project/tflite/</a> | 2.3.0 | Use for running TensorFlow models on mobile and edge devices with optimized performance. Used with .tflite files. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/onnx/">https://pypi.org/project/onnx/</a> | 1.12.0 | ONNX stands for Open Neural Network Exchange. It is used for defining and exchanging deep learning models between different frameworks. Used with .onnx files. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/onnxruntime/">https://pypi.org/project/onnxruntime/</a> | 1.17.1 | ONNX stands for Open Neural Network Exchange. It is used for running ONNX models with high performance across various hardware platforms. Used with .onnx files. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/onnxsim/">https://pypi.org/project/onnxsim/</a> | 0.4.36 | It is used for simplifying ONNX models to reduce complexity and improve inference efficiency. Used with .onnx files. |</div>
+<div class="line">⭐ Install any / all of the frameworks you want to use ai models from.</div>
+<div class="line">You can install a package by running ‘pip install package==version’.</div>
+<div class="line">Ex. ‘pip install tensorflow==2.10.1’</div>
 </div>
-<p>⭐ You can verify your installation by calling ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</p>
+<p>| Package | Version | Description |
+| — | — | — |
+| <a class="reference external" href="https://pypi.org/project/torch/">https://pypi.org/project/torch/</a> | 1.13.1 | Use for building and training deep learning models with a focus on flexibility and speed. Used with .pt files. Install by downloading the proper binary <a class="reference external" href="https://pytorch.org/get-started/previous-versions/#v1130">https://pytorch.org/get-started/previous-versions/#v1130</a> if pip install does not work. |
+| <a class="reference external" href="https://pypi.org/project/torchvision/">https://pypi.org/project/torchvision/</a>  | 0.14.1 | Use for computer vision tasks with PyTorch, providing datasets, model architectures, and image transforms. |
+| <a class="reference external" href="https://pypi.org/project/tensorflow/">https://pypi.org/project/tensorflow/</a> | 2.10.1 | Use for building and training machine learning models, particularly deep learning models. Used with .pb files. |
+| <a class="reference external" href="https://pypi.org/project/tflite/">https://pypi.org/project/tflite/</a> | 2.3.0 | Use for running TensorFlow models on mobile and edge devices with optimized performance. Used with .tflite files. |
+| <a class="reference external" href="https://pypi.org/project/onnx/">https://pypi.org/project/onnx/</a> | 1.12.0 | ONNX stands for Open Neural Network Exchange. It is used for defining and exchanging deep learning models between different frameworks. Used with .onnx files. |
+| <a class="reference external" href="https://pypi.org/project/onnxruntime/">https://pypi.org/project/onnxruntime/</a> | 1.17.1 | ONNX stands for Open Neural Network Exchange. It is used for running ONNX models with high performance across various hardware platforms. Used with .onnx files. |
+| <a class="reference external" href="https://pypi.org/project/onnxsim/">https://pypi.org/project/onnxsim/</a> | 0.4.36 | It is used for simplifying ONNX models to reduce complexity and improve inference efficiency. Used with .onnx files. |</p>
+<div class="line-block">
+<div class="line">⭐ You can verify your installation by calling ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</div>
+</div>
 <ol class="arabic simple">
 <li><p>Install Target Device OS-Specific Toolchain Code</p></li>
 </ol>
@@ -219,14 +233,18 @@ Ex. ‘pip install tensorflow==2.10.1’</p>
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
 <li><p>Unzip the file.</p>
 <blockquote>
-<div><p>⚠️ If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</p>
+<div><div class="line-block">
+<div class="line">⚠️ If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Copy the path to your unzipped Android NDK root (the folder should be named ‘android-ndk-r26c’).</p></li>
 <li><p>Open a Powershell terminal.</p></li>
 <li><p>Add the location of the unzipped file to your PATH by running:</p>
 <blockquote>
-<div><p>⚠️ Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</p>
+<div><div class="line-block">
+<div class="line">⚠️ Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</div>
+</div>
 </div></blockquote>
 </li>
 </ol>
@@ -259,7 +277,9 @@ Ex. ‘pip install tensorflow==2.10.1’</p>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic">
 <li><p>Sign into <a class="reference external" href="https://qpm.qualcomm.com/#/main/tools/details/QPM3">https://qpm.qualcomm.com/#/main/tools/details/QPM3</a>.</p>
 <blockquote>
-<div><p>⚠️ You may have to reclick the link after logging in to have it load properly.</p>
+<div><div class="line-block">
+<div class="line">⚠️ You may have to reclick the link after logging in to have it load properly.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Download the Windows version of Qualcomm Package Manager 3 (QPM3).</p></li>
@@ -271,35 +291,39 @@ Ex. ‘pip install tensorflow==2.10.1’</p>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
 <li><p>Once logged in to the Qualcomm Package Manager, search for “Hexagon SDK” and download the proper version for your target device.</p>
 <blockquote>
-<div><p>⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</p>
-<div class="line-block">
-<div class="line">Backend | Hexagon Architecture | Hexagon SDK Version | Additional Notes |</div>
-<div class="line">— | — | — | — |</div>
-<div class="line">HTP | V75 | 5.4.0 |  |</div>
-<div class="line">HTP | V73 | 5.4.0 |  |</div>
-<div class="line">HTP | V69 | 4.3.0 |  |</div>
-<div class="line">HTP | V68 | 4.2.0 | Not pre-packaged with Hexagon SDK Tools. |</div>
-<div class="line">DSP | V66 | 4.1.0 | Not pre-packaged with Hexagon SDK Tools. |</div>
-<div class="line">DSP | V65 | 3.5.2 | Must be downloaded manually <a class="reference external" href="https://developer.qualcomm.com/software/hexagon-dsp-sdk/tools">https://developer.qualcomm.com/software/hexagon-dsp-sdk/tools</a> instead of from QPM3. Not pre-packaged with Hexagon SDK Tools.  |</div>
+<div><div class="line-block">
+<div class="line">⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</div>
 </div>
-<p>⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
+<p>| Backend | Hexagon Architecture | Hexagon SDK Version | Additional Notes |
+| — | — | — | — |
+| HTP | V75 | 5.4.0 |  |
+| HTP | V73 | 5.4.0 |  |
+| HTP | V69 | 4.3.0 |  |
+| HTP | V68 | 4.2.0 | Not pre-packaged with Hexagon SDK Tools. |
+| DSP | V66 | 4.1.0 | Not pre-packaged with Hexagon SDK Tools. |
+| DSP | V65 | 3.5.2 | Must be downloaded manually <a class="reference external" href="https://developer.qualcomm.com/software/hexagon-dsp-sdk/tools">https://developer.qualcomm.com/software/hexagon-dsp-sdk/tools</a> instead of from QPM3. Not pre-packaged with Hexagon SDK Tools.  |</p>
+<div class="line-block">
+<div class="line">⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Search for “Hexagon Tools” and download the proper version for your target device.</p>
 <blockquote>
 <div><p>Based on your device’s architecture version, use the following table to determine which versions to download.</p>
-<p>⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</p>
 <div class="line-block">
-<div class="line">Backend | Hexagon Architecture | Hexagon Tools Version | Additional Notes |</div>
-<div class="line">— | — | — | — |</div>
-<div class="line">HTP | V75 | 8.7.03 |  |</div>
-<div class="line">HTP | V73 | 8.6.02 |  |</div>
-<div class="line">HTP | V69 | 8.5.03 |  |</div>
-<div class="line">HTP | V68 | 8.4.09 | Not pre-packaged. |</div>
-<div class="line">DSP | V66 | 8.4.06 | Not pre-packaged. |</div>
-<div class="line">DSP | V65 | 8.3.07 | Not pre-packaged. |</div>
+<div class="line">⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</div>
 </div>
-<p>⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
+<p>| Backend | Hexagon Architecture | Hexagon Tools Version | Additional Notes |
+| — | — | — | — |
+| HTP | V75 | 8.7.03 |  |
+| HTP | V73 | 8.6.02 |  |
+| HTP | V69 | 8.5.03 |  |
+| HTP | V68 | 8.4.09 | Not pre-packaged. |
+| DSP | V66 | 8.4.06 | Not pre-packaged. |
+| DSP | V65 | 8.3.07 | Not pre-packaged. |</p>
+<div class="line-block">
+<div class="line">⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Install clang++ so you can compile code for HTP / DSP hardware.</p></li>
@@ -314,7 +338,9 @@ Ex. ‘pip install tensorflow==2.10.1’</p>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic">
 <li><p>Sign into <a class="reference external" href="https://qpm.qualcomm.com/#/main/tools/details/QPM3">https://qpm.qualcomm.com/#/main/tools/details/QPM3</a>.</p>
 <blockquote>
-<div><p>⚠️ You may have to reclick the link after logging in to have it load properly.</p>
+<div><div class="line-block">
+<div class="line">⚠️ You may have to reclick the link after logging in to have it load properly.</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Download the Windows version of Qualcomm Package Manager 3 (QPM3).</p></li>
@@ -346,17 +372,15 @@ Ex. ‘pip install tensorflow==2.10.1’</p>
 <p>You can install each relevant package by running:</p>
 <p>‘pip3 install dependency==version’</p>
 <p>Ex. ‘pip3 install pycocotools==2.0.6’</p>
-<div class="line-block">
-<div class="line">Package | Version | Description |</div>
-<div class="line">— | — | — |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/pycocotools/">https://pypi.org/project/pycocotools/</a> | 2.0.6 | Use for working with COCO datasets for object detection, segmentation, and keypoint tasks. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/transformers/">https://pypi.org/project/transformers/</a> | 4.31.0 | Use for leveraging pre-trained models for various NLP tasks like text classification, translation, and more. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/tokenizers/">https://pypi.org/project/tokenizers/</a> | 0.19.1 | Use for efficient tokenization of text data, particularly when dealing with large datasets. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/sacrebleu/">https://pypi.org/project/sacrebleu/</a> | 2.3.1 | Use for evaluating the quality of machine translation models. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/scikit-learn/">https://pypi.org/project/scikit-learn/</a> | 1.3.0 | Use for implementing machine learning algorithms and models for various predictive tasks. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/OpenNMT-py/">https://pypi.org/project/OpenNMT-py/</a> | 2.3.0 | Use for building and training neural machine translation models. |</div>
-<div class="line"><a class="reference external" href="https://pypi.org/project/sentencepiece/">https://pypi.org/project/sentencepiece/</a> | 0.1.98 | Use for unsupervised text tokenization and preprocessing for language models. |</div>
-</div>
+<p>| Package | Version | Description |
+| — | — | — |
+| <a class="reference external" href="https://pypi.org/project/pycocotools/">https://pypi.org/project/pycocotools/</a> | 2.0.6 | Use for working with COCO datasets for object detection, segmentation, and keypoint tasks. |
+| <a class="reference external" href="https://pypi.org/project/transformers/">https://pypi.org/project/transformers/</a> | 4.31.0 | Use for leveraging pre-trained models for various NLP tasks like text classification, translation, and more. |
+| <a class="reference external" href="https://pypi.org/project/tokenizers/">https://pypi.org/project/tokenizers/</a> | 0.19.1 | Use for efficient tokenization of text data, particularly when dealing with large datasets. |
+| <a class="reference external" href="https://pypi.org/project/sacrebleu/">https://pypi.org/project/sacrebleu/</a> | 2.3.1 | Use for evaluating the quality of machine translation models. |
+| <a class="reference external" href="https://pypi.org/project/scikit-learn/">https://pypi.org/project/scikit-learn/</a> | 1.3.0 | Use for implementing machine learning algorithms and models for various predictive tasks. |
+| <a class="reference external" href="https://pypi.org/project/OpenNMT-py/">https://pypi.org/project/OpenNMT-py/</a> | 2.3.0 | Use for building and training neural machine translation models. |
+| <a class="reference external" href="https://pypi.org/project/sentencepiece/">https://pypi.org/project/sentencepiece/</a> | 0.1.98 | Use for unsupervised text tokenization and preprocessing for language models. |</p>
 </section>
 <section id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
