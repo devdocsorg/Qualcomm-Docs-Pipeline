@@ -156,7 +156,7 @@
 <p class="admonition-title">Warning</p>
 <p>⚠️ The ‘envsetup.sh’ script only updates environment variables for the current terminal session. If you need to set ‘QNN_SDK_ROOT’ again, just re-run this script.</p>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="5">
 <li><p>Run ‘sudo ${QNN_SDK_ROOT}/bin/check-linux-dependency.sh’.</p>
 <blockquote>
 <div><p>This will install the Linux build tools. When you have installed all the necessary dependencies, the script will say “Done!!”.</p>
@@ -167,7 +167,7 @@
 <p class="admonition-title">Note</p>
 <p>💡 As the script is running, you will have to confirm additional downloads by pressing “Enter”. The script may take several minutes to complete.</p>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="6">
 <li><p>Run ‘${QNN_SDK_ROOT}/bin/envcheck -c’.</p>
 <blockquote>
 <div><p>This will verify that you have installed the required toolchain successfully.</p>
@@ -180,25 +180,25 @@
 <ol class="arabic simple">
 <li><p>Install python 3.10 by running the following commands:</p></li>
 </ol>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Verify the installation worked by running:</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>⚠️ Ensure you have Python 3.10. The QNN SDK was verified with Python version 3.10.4.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Run ‘cd ${QNN_SDK_ROOT}’.</p></li>
 <li><p>Install ‘python3.10-venv’ if you don’t have it installed already by running:</p></li>
 </ol>
-<ol class="arabic simple">
+<ol class="arabic simple" start="5">
 <li><p>Run the following command to create and activate a new virtual environment (you may rename ‘MY_ENV_NAME’ to any name you prefer):</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>⚠️ We have to use the flag ‘–without-pip’ on Debian/Ubuntu systems to avoid a crash since venv will call ‘ensurepip’ at the system level (which is disabled on Debian/Ubuntu). Once we activate our venv, we can then safely call ‘ensurepip’ to create a local pip for installing packages.</p>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="6">
 <li><p>Run ‘which pip3’ to verify that the virtual environment has a local version of ‘pip3’.</p>
 <blockquote>
 <div><p>You should see a path that is inside your virtual environment (Ex. ‘/MY_ENV_NAME/bin/pip3’)</p>
@@ -275,7 +275,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p>⚠️ If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</p>
 </div>
 </div></blockquote>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Open a terminal.</p></li>
 <li><p>Add the location of the unzipped file to your PATH by running:</p></li>
 </ol>
@@ -285,7 +285,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p>⚠️ Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</p>
 </div>
 </div></blockquote>
-<ol class="arabic simple">
+<ol class="arabic simple" start="5">
 <li><p>Verify your environment variables by running:</p></li>
 </ol>
 </section>
@@ -317,7 +317,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>⚠️ You may have to reclick the link after logging in to have it load properly.</p>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
 <li><p>Open the installer and click “Install”.</p></li>
 <li><dl class="simple">
@@ -329,7 +329,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </li>
 </ol>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Start QPM3 by running the QPM3 exectuable.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted by QPM3.</p></li>
 <li><p>Once logged in to QPM3, click on “Tools.”</p></li>
@@ -384,7 +384,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p class="admonition-title">Note</p>
 <p>⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="6">
 <li><p>Search for “Hexagon Tools” and download the proper version for your target device.</p>
 <blockquote>
 <div><p>Based on your device’s architecture version, use the following table to determine which versions to download.</p>
@@ -440,7 +440,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p class="admonition-title">Note</p>
 <p>⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="7">
 <li><p>Install clang++ so you can compile code for HTP/DSP hardware.</p></li>
 <li><p>Follow the instructions at ‘$HEXAGON_SDK_ROOT/docs/readme.html’ (where ‘$HEXAGON_SDK_ROOT’ is the location of the Hexagon SDK installation).</p></li>
 </ol>
@@ -457,12 +457,14 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p class="admonition-title">Warning</p>
 <p>⚠️ You may have to reclick the link after logging in to have it load properly.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
 </ol>
 </dd>
 </dl>
 </li>
+</ol>
+<ol class="arabic">
 <li><p>Start QPM3 by running the QPM3 executable.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
 <li><p>Once logged in to the Qualcomm Package Manager, open the “Tools” category.</p></li>
@@ -482,7 +484,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p class="admonition-title">Warning</p>
 <p>⚠️ If an installation fails because QPM3 cannot access a folder, move the installation path to one which does not require sudo access.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="4">
 <li><p>Then re-install the LPAI code.</p></li>
 </ol>
 </dd>
