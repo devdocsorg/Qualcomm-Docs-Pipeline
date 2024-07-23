@@ -80,9 +80,15 @@
 <section id="setup-for-linux-host-ubuntu-wsl-and-other-distros">
 <h1>Setup for Linux Host (Ubuntu, WSL, and other distros)<a class="headerlink" href="#setup-for-linux-host-ubuntu-wsl-and-other-distros" title="Link to this heading"></a></h1>
 <p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>⭐ This guide is for a host machine running Linux. If you are using a Windows machine, please follow the instructions for a Windows setup.</p>
+</div>
 <p>The QNN SDK allows you to convert an AI model (e.g., a ‘.pt’ model from PyTorch) into instructions that can be run on a target device’s various processing units (CPU, GPU, HTP, cDSP, or LPAI).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>⭐ To learn about acronyms which are new to you, see the Glossary.</p>
+</div>
 <p>You will need to install the following code to use the QNN SDK:</p>
 <ol class="arabic simple">
 <li><p>The QNN SDK binary and its immediate dependencies.</p></li>
@@ -96,7 +102,10 @@
 </li>
 <li><p>Packages/tooling to build the converted models for specific hardware processors (CPU, GPU, HTP, cDSP, or LPAI).</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>⭐ This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</p>
+</div>
 </section>
 <section id="install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">
 <h1>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h1>
@@ -201,8 +210,11 @@
 <section id="install-model-frameworks">
 <h1>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h1>
 <p>These are the packages that interpret your AI model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>⚠️ Install any/all of the frameworks you want to use AI models from. You can install a package by running ‘pip3 install package==version’.
 e.g., ‘pip3 install torch==1.13.1’</p>
+</div>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -241,7 +253,10 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>⭐ You can verify your installation by calling ‘${QNN_SDK_ROOT}/bin/envcheck -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</p>
+</div>
 </section>
 <section id="install-target-device-os-specific-toolchain-code">
 <h1>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h1>
@@ -278,10 +293,6 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <h1>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h1>
 <p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can verify if you have ‘clang++14’ by running:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>${QNN_SDK_ROOT}/bin/envcheck -c</p>
 <p>If not, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
 </section>
 <section id="install-dependencies-for-target-hardware-processors">
@@ -382,66 +393,49 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<blockquote>
-<div><p>⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">header-rows<span class="colon">:</span></dt>
-<dd class="field-odd"><p>1</p>
-</dd>
-</dl>
-<ul class="simple">
-<li><ul>
-<li><p>Backend</p></li>
-<li><p>Hexagon Architecture</p></li>
-<li><p>Hexagon Tools Version</p></li>
-<li><p>Additional Notes</p></li>
-</ul>
-</li>
-<li><ul>
-<li><p>HTP</p></li>
-<li><p>V75</p></li>
-<li><p>8.7.03</p></li>
-<li></li>
-</ul>
-</li>
-<li><ul>
-<li><p>HTP</p></li>
-<li><p>V73</p></li>
-<li><p>8.6.02</p></li>
-<li></li>
-</ul>
-</li>
-<li><ul>
-<li><p>HTP</p></li>
-<li><p>V69</p></li>
-<li><p>8.5.03</p></li>
-<li></li>
-</ul>
-</li>
-<li><ul>
-<li><p>HTP</p></li>
-<li><p>V68</p></li>
-<li><p>8.4.09</p></li>
-<li><p>Not pre-packaged.</p></li>
-</ul>
-</li>
-<li><ul>
-<li><p>DSP</p></li>
-<li><p>V66</p></li>
-<li><p>8.4.06</p></li>
-<li><p>Not pre-packaged.</p></li>
-</ul>
-</li>
-<li><ul>
-<li><p>DSP</p></li>
-<li><p>V65</p></li>
-<li><p>8.3.07</p></li>
-<li><p>Not pre-packaged.</p></li>
-</ul>
-</li>
-</ul>
+<p>⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</p>
 </div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Backend</p></th>
+<th class="head"><p>Hexagon Architecture</p></th>
+<th class="head"><p>Hexagon Tools Version</p></th>
+<th class="head"><p>Additional Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HTP</p></td>
+<td><p>V75</p></td>
+<td><p>8.7.03</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HTP</p></td>
+<td><p>V73</p></td>
+<td><p>8.6.02</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HTP</p></td>
+<td><p>V69</p></td>
+<td><p>8.5.03</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HTP</p></td>
+<td><p>V68</p></td>
+<td><p>8.4.09</p></td>
+<td><p>Not pre-packaged.</p></td>
+</tr>
+<tr class="row-even"><td><p>DSP</p></td>
+<td><p>V66</p></td>
+<td><p>8.4.06</p></td>
+<td><p>Not pre-packaged.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DSP</p></td>
+<td><p>V65</p></td>
+<td><p>8.3.07</p></td>
+<td><p>Not pre-packaged.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
@@ -454,29 +448,25 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <section id="lpai-low-power-ai">
 <h1>LPAI (Low Power AI)<a class="headerlink" href="#lpai-low-power-ai" title="Link to this heading"></a></h1>
 <p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
-<ol class="arabic simple">
-<li><dl class="simple">
+<ol class="arabic">
+<li><dl>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
 <li><p>Sign into <a class="reference external" href="https://qpm.qualcomm.com/#/main/tools/details/QPM3">https://qpm.qualcomm.com/#/main/tools/details/QPM3</a>.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>⚠️ You may have to reclick the link after logging in to have it load properly.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
 </ol>
 </dd>
 </dl>
 </li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<blockquote>
-<div><p>⚠️ You may have to reclick the link after logging in to have it load properly.</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
-</ol>
-</div>
-<ol class="arabic simple">
 <li><p>Start QPM3 by running the QPM3 executable.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
 <li><p>Once logged in to the Qualcomm Package Manager, open the “Tools” category.</p></li>
-<li><dl class="simple">
+<li><dl>
 <dt>Search for “LPAI” and click the “Extract” button.</dt><dd><ol class="arabic simple">
 <li><p>This will attempt to install the LPAI code, <strong>but will likely fail</strong> because it is missing the Hexagon SDK dependency.</p></li>
 <li><dl class="simple">
@@ -488,19 +478,17 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </li>
 <li><p>Install the necessary version of the Hexagon SDK.</p></li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>⚠️ If an installation fails because QPM3 cannot access a folder, move the installation path to one which does not require sudo access.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Then re-install the LPAI code.</p></li>
+</ol>
 </dd>
 </dl>
 </li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<blockquote>
-<div><p>⚠️ If an installation fails because QPM3 cannot access a folder, move the installation path to one which does not require sudo access.</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><p>Then re-install the LPAI code.</p></li>
-</ol>
-</div>
 </section>
 <section id="optional-additional-packages-for-evaluating-model-accuracy">
 <h1>5. (Optional) Additional Packages for Evaluating Model Accuracy<a class="headerlink" href="#optional-additional-packages-for-evaluating-model-accuracy" title="Link to this heading"></a></h1>
