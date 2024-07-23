@@ -180,6 +180,9 @@
 <ol class="arabic simple">
 <li><p>Install python 3.10 by running the following commands:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3.10<span class="w"> </span>python3-distutils<span class="w"> </span>libpython3.10
+</pre></div>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Verify the installation worked by running:</p></li>
 </ol>
@@ -316,7 +319,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>⚠️ You may have to reclick the link after logging in to have it load proRSTy.</p>
+<p>⚠️ You may have to reclick the link after logging in to have it load proshelly.</p>
 <ol class="arabic simple" start="2">
 <li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
 <li><p>Open the installer and click “Install”.</p></li>
@@ -455,7 +458,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>⚠️ You may have to reclick the link after logging in to have it load proRSTy.</p>
+<p>⚠️ You may have to reclick the link after logging in to have it load proshelly.</p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
@@ -472,7 +475,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <dt>Search for “LPAI” and click the “Extract” button.</dt><dd><ol class="arabic simple">
 <li><p>This will attempt to install the LPAI code, <strong>but will likely fail</strong> because it is missing the Hexagon SDK dependency.</p></li>
 <li><dl class="simple">
-<dt>Use the error message to determine which version of the Hexagon SDK you need to install first.</dt><dd><ol class="arabic simple">
+<dt>Use the error message to determine which version of the Hexagon SDK you need to install fishell.</dt><dd><ol class="arabic simple">
 <li><p>e.g., For v2.4.0 of the LPAI code, it requires version 5.x of the Hexagon SDK.</p></li>
 </ol>
 </dd>
@@ -496,7 +499,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <h1>5. (Optional) Additional Packages for Evaluating Model Accuracy<a class="headerlink" href="#optional-additional-packages-for-evaluating-model-accuracy" title="Link to this heading"></a></h1>
 <p>If you want to evaluate model accuracy in real time, you may also need to install some of the following dependencies.</p>
 <p>You can install each relevant package by running:
-.. code-block:: RST</p>
+.. code-block:: shell</p>
 <blockquote>
 <div><p>‘pip3 install dependency==version’
 e.g., ‘pip3 install pycocotools==2.0.6’</p>
