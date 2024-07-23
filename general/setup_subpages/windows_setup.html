@@ -80,12 +80,18 @@
 <section id="setup-for-windows-host-10-11-and-snapdragon">
 <h1>Setup for Windows Host (10, 11, and Snapdragon)<a class="headerlink" href="#setup-for-windows-host-10-11-and-snapdragon" title="Link to this heading"></a></h1>
 <p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="line-block">
 <div class="line">This guide is for a host machine running Windows 10, 11, or Windows on Snapdragon. If you are using a Linux machine or are using a WSL environment, follow the instructions <a class="reference external" href="https://www.notion.so/QNN-Setup-Rewrite-Linux-6643489a4c4c4bdebb76ecf7fcc4ec73?pvs=21">here</a>.</div>
 </div>
+</div>
 <p>The QNN SDK allows you to convert an AI model (ex. a ‘.pt’ model from PyTorch) into instructions that can be run on a target device’s various processing units (CPU, GPU, HTP, cDSP, or LPAI).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="line-block">
 <div class="line">To learn about acronyms which are new to you, see the Glossary.</div>
+</div>
 </div>
 <p>You will need to install the following code to use the QNN SDK:</p>
 <ol class="arabic simple">
@@ -100,8 +106,11 @@
 </li>
 <li><p>Packages / tooling to build the converted models for specific hardware processors (CPU, GPU, HTP, cDSP, or LPAI).</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="line-block">
 <div class="line">This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
+</div>
 </div>
 <p>Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</p>
 <ol class="arabic simple">
@@ -219,12 +228,13 @@
 <li><p>Install Model Frameworks</p></li>
 </ol>
 <p>These are the packages that interpret your ai model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
-<div class="line-block">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="line-block">
 <div class="line">Install any / all of the frameworks you want to use ai models from.</div>
-</div>
 <div class="line">You can install a package by running ‘pip install package==version’.</div>
 <div class="line">Ex. ‘pip install tensorflow==2.10.1’</div>
+</div>
 </div>
 <p>| Package | Version | Description |
 | — | — | — |
@@ -235,8 +245,11 @@
 | <a class="reference external" href="https://pypi.org/project/onnx/">https://pypi.org/project/onnx/</a> | 1.12.0 | ONNX stands for Open Neural Network Exchange. It is used for defining and exchanging deep learning models between different frameworks. Used with .onnx files. |
 | <a class="reference external" href="https://pypi.org/project/onnxruntime/">https://pypi.org/project/onnxruntime/</a> | 1.17.1 | ONNX stands for Open Neural Network Exchange. It is used for running ONNX models with high performance across various hardware platforms. Used with .onnx files. |
 | <a class="reference external" href="https://pypi.org/project/onnxsim/">https://pypi.org/project/onnxsim/</a> | 0.4.36 | It is used for simplifying ONNX models to reduce complexity and improve inference efficiency. Used with .onnx files. |</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="line-block">
 <div class="line">You can verify your installation by calling ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</div>
+</div>
 </div>
 <ol class="arabic simple">
 <li><p>Install Target Device OS-Specific Toolchain Code</p></li>
@@ -301,11 +314,9 @@
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<blockquote>
-<div><div class="line-block">
+<div class="line-block">
 <div class="line">You may have to reclick the link after logging in to have it load properly.</div>
 </div>
-</div></blockquote>
 <ol class="arabic simple">
 <li><p>Download the Windows version of Qualcomm Package Manager 3 (QPM3).</p></li>
 </ol>
