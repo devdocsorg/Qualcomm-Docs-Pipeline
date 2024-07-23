@@ -159,7 +159,7 @@ and subsequently built for use by an application.</p>
 <p class="admonition-title">Note</p>
 <p>A quantized model is needed for use on the HTP and DSP backend. See <a class="reference internal" href="#id2">Model Quantization</a> to generate a quantized model.</p>
 </div>
-<p>For model conversion in x86_64-windows, please execute the Python script with <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-3</span></code> command ahead of the command after setting the python dependency <a class="reference internal" href="setup.html#id1"><span class="std std-ref">Windows Platform Dependencies</span></a>.
+<p>For model conversion in x86_64-windows, please execute the Python script with <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-3</span></code> command ahead of the command after setting the python dependency <span class="xref std std-ref">Windows Platform Dependencies</span>.
 An example below:
 $ py -3 qnn-tensorflow-converter &lt;options&gt;</p>
 <p>Check more details with Inception V3 model below in x86_64-windows code block:</p>
@@ -316,7 +316,7 @@ qnn-model-lib-generator tool.</p>
 -<span class="w"> </span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/examples/Models/InceptionV3/model/Inception_v3.bin
 </pre></div>
 </div>
-<p>Make sure you have setup <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}</span></code> environment variable with <a class="reference internal" href="setup.html#environment-setup-windows"><span class="std std-ref">Environment Setup for Windows</span></a>.</p>
+<p>Make sure you have setup <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}</span></code> environment variable with <span class="xref std std-ref">Environment Setup for Windows</span>.</p>
 <p id="windows-model-lib-generator">Windows developers can specify the output library target platform using the “-t” config with either the ‘windows-x86_64’ or ‘windows-aarch64’ option to
 qnn-model-lib-generator. The corresponding model DLL library will reside in the model_libsx64 or model_libsARM64 folder.
 When performing inference on a Windows on Snapdragon device, developers should use ‘windows-aarch64’ as the target platform option.
@@ -354,7 +354,7 @@ Developers must make sure the input model.cpp and model.bin were converted with 
 -<span class="w"> </span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/examples/Models/InceptionV3/model/Inception_v3_quantized.bin
 </pre></div>
 </div>
-<p>Make sure you have setup <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}</span></code> environment variable with <a class="reference internal" href="setup.html#environment-setup-windows"><span class="std std-ref">Environment Setup for Windows</span></a>.</p>
+<p>Make sure you have setup <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}</span></code> environment variable with <span class="xref std std-ref">Environment Setup for Windows</span>.</p>
 <p><strong>For Windows native/x86_64 PC developers</strong></p>
 <p>We can generate our model DLL library via:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\t</span>mp<span class="se">\q</span>nn_tmp
