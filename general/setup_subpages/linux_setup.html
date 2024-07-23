@@ -186,6 +186,9 @@
 <ol class="arabic simple" start="2">
 <li><p>Verify the installation worked by running:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>⚠️ Ensure you have Python 3.10. The QNN SDK was verified with Python version 3.10.4.</p>
@@ -194,9 +197,17 @@
 <li><p>Run ‘cd ${QNN_SDK_ROOT}’.</p></li>
 <li><p>Install ‘python3.10-venv’ if you don’t have it installed already by running:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.10-venv
+</pre></div>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Run the following command to create and activate a new virtual environment (you may rename ‘MY_ENV_NAME’ to any name you prefer):</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>MY_ENV_NAME<span class="w"> </span>--without-pip
+<span class="nb">source</span><span class="w"> </span>MY_ENV_NAME/bin/activate
+python3<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span>--upgrade
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>⚠️ We have to use the flag ‘–without-pip’ on Debian/Ubuntu systems to avoid a crash since venv will call ‘ensurepip’ at the system level (which is disabled on Debian/Ubuntu). Once we activate our venv, we can then safely call ‘ensurepip’ to create a local pip for installing packages.</p>
@@ -209,6 +220,9 @@
 </li>
 <li><p>Update all dependencies by running the following command:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="s2">/bin/check-python-dependency&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="install-model-frameworks">
 <h1>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h1>
@@ -288,14 +302,25 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p>⚠️ Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</p>
 </div>
 </div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ANDROID_NDK_ROOT=&lt;path-to-your-android-ndk-root-folder&gt;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.shellrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=${ANDROID_NDK_ROOT}:${PATH}&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.shellrc
+<span class="nb">source</span><span class="w"> </span>~/.shellrc
+</pre></div>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Verify your environment variables by running:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-n
+</pre></div>
+</div>
 </section>
 <section id="working-with-a-linux-target-device">
 <h1>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h1>
 <p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can verify if you have ‘clang++14’ by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-c
+</pre></div>
+</div>
 <p>If not, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
 </section>
 <section id="install-dependencies-for-target-hardware-processors">

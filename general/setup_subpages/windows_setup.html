@@ -196,6 +196,27 @@
 </div>
 <p>You should see an output like this:</p>
 </div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Checking<span class="w"> </span>MSVC<span class="w"> </span>Toolchain
+--------------------------------------------------------------
+WARNING:<span class="w"> </span>The<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>VS<span class="w"> </span>BuildTools<span class="w"> </span><span class="m">14</span>.40.33807<span class="w"> </span>found<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>validated.<span class="w"> </span>Recommended<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>known<span class="w"> </span>stable<span class="w"> </span>VS
+BuildTools<span class="w"> </span>version<span class="w"> </span><span class="m">14</span>.34
+WARNING:<span class="w"> </span>The<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>Visual<span class="w"> </span>C++<span class="o">(</span>x64<span class="o">)</span><span class="w"> </span><span class="m">19</span>.40.33812<span class="w"> </span>found<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>validated.<span class="w"> </span>Recommended<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>known<span class="w"> </span>stable
+Visual<span class="w"> </span>C++<span class="o">(</span>x64<span class="o">)</span><span class="w"> </span>version<span class="w"> </span><span class="m">19</span>.34
+WARNING:<span class="w"> </span>The<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>CMake<span class="w"> </span><span class="m">3</span>.28.3<span class="w"> </span>found<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>validated.<span class="w"> </span>Recommended<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>known<span class="w"> </span>stable<span class="w"> </span>CMake<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.21
+WARNING:<span class="w"> </span>The<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>clang-cl<span class="w"> </span><span class="m">17</span>.0.3<span class="w"> </span>found<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>validated.<span class="w"> </span>Recommended<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>known<span class="w"> </span>stable<span class="w"> </span>clang-cl<span class="w"> </span>version
+<span class="m">15</span>.0.1
+Name<span class="w">              </span>Version
+----<span class="w">              </span>-------
+Visual<span class="w"> </span>Studio<span class="w">     </span><span class="m">17</span>.10.35027.167
+VS<span class="w"> </span>Build<span class="w"> </span>Tools<span class="w">    </span><span class="m">14</span>.40.33807
+Visual<span class="w"> </span>C++<span class="o">(</span>x86<span class="o">)</span><span class="w">   </span><span class="m">19</span>.40.33812
+Visual<span class="w"> </span>C++<span class="o">(</span>arm64<span class="o">)</span><span class="w"> </span>Not<span class="w"> </span>Installed
+Windows<span class="w"> </span>SDK<span class="w">       </span><span class="m">10</span>.0.22621
+CMake<span class="w">             </span><span class="m">3</span>.28.3
+clang-cl<span class="w">          </span><span class="m">17</span>.0.3
+--------------------------------------------------------------
+</pre></div>
+</div>
 </section>
 <section id="install-qnn-sdk-dependencies">
 <h2>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h2>
@@ -211,6 +232,10 @@
 <ol class="arabic simple" start="2">
 <li><p>Verify the installation worked by running:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>py<span class="w"> </span>--list
+You<span class="w"> </span>should<span class="w"> </span>see<span class="w"> </span><span class="s1">&#39;-V:3.10&#39;</span><span class="w"> </span>as<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>options.
+</pre></div>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Open the folder at ‘QNN_SDK_ROOT’ in Visual Studio.</p></li>
 <li><p>Open a new powershell terminal in Visual Studio by going to the top-menu “Terminal” and clicking “New Terminal”</p></li>
@@ -224,9 +249,17 @@
 <ol class="arabic simple" start="5">
 <li><p>From the ‘QNN_SDK_ROOT’ folder, run the following command to create and activate a new virtual environment:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>py<span class="w"> </span>-3.10<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="s2">&quot;venv&quot;</span>
+<span class="p">&amp;</span><span class="w"> </span><span class="s2">&quot;venv\Scripts\Activate.s1&quot;</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="6">
 <li><p>Update all dependencies by running the following commands in Powershell:</p></li>
 </ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">:QNN_SDK_ROOT\bin\check-python-dependency&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="install-model-frameworks">
 <h2>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h2>
@@ -309,6 +342,13 @@
 <div class="line-block">
 <div class="line">Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</div>
 </div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:ANDROID_NDK_ROOT<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;path-to-your-android-ndk-root-folder&gt;&quot;</span>
+<span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="s2">&quot;ANDROID_NDK_ROOT&quot;</span>,<span class="w"> </span><span class="s2">&quot;&lt;path-to-your-android-ndk-root-folder&gt;&quot;</span>,<span class="w"> </span><span class="s2">&quot;User&quot;</span><span class="o">)</span>
+
+<span class="nv">$env</span>:PATH<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">:ANDROID_NDK_ROOT;</span><span class="nv">$env</span><span class="s2">:PATH&quot;</span>
+<span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="s2">&quot;PATH&quot;</span>,<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">:ANDROID_NDK_ROOT;</span><span class="nv">$env</span><span class="s2">:PATH&quot;</span>,<span class="w"> </span><span class="s2">&quot;User&quot;</span><span class="o">)</span>
+</pre></div>
 </div>
 <ol class="arabic" start="6">
 <li><p>Run ‘Unblock-File “${QNN_SDK_ROOT}/bin/envcheck.ps1’.</p></li>
