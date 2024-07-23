@@ -81,11 +81,11 @@
 <h1>Setup for Windows Host (10, 11, and Snapdragon)<a class="headerlink" href="#setup-for-windows-host-10-11-and-snapdragon" title="Link to this heading"></a></h1>
 <p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
 <div class="line-block">
-<div class="line">⭐ This guide is for a host machine running Windows 10, 11, or Windows on Snapdragon. If you are using a Linux machine or are using a WSL environment, follow the instructions <a class="reference external" href="https://www.notion.so/QNN-Setup-Rewrite-Linux-6643489a4c4c4bdebb76ecf7fcc4ec73?pvs=21">here</a>.</div>
+<div class="line">This guide is for a host machine running Windows 10, 11, or Windows on Snapdragon. If you are using a Linux machine or are using a WSL environment, follow the instructions <a class="reference external" href="https://www.notion.so/QNN-Setup-Rewrite-Linux-6643489a4c4c4bdebb76ecf7fcc4ec73?pvs=21">here</a>.</div>
 </div>
 <p>The QNN SDK allows you to convert an AI model (ex. a ‘.pt’ model from PyTorch) into instructions that can be run on a target device’s various processing units (CPU, GPU, HTP, cDSP, or LPAI).</p>
 <div class="line-block">
-<div class="line">⭐ To learn about acronyms which are new to you, see the Glossary.</div>
+<div class="line">To learn about acronyms which are new to you, see the Glossary.</div>
 </div>
 <p>You will need to install the following code to use the QNN SDK:</p>
 <ol class="arabic simple">
@@ -101,7 +101,7 @@
 <li><p>Packages / tooling to build the converted models for specific hardware processors (CPU, GPU, HTP, cDSP, or LPAI).</p></li>
 </ol>
 <div class="line-block">
-<div class="line">⭐ This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
+<div class="line">This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
 </div>
 <p>Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</p>
 <ol class="arabic simple">
@@ -157,9 +157,11 @@
 </div></blockquote>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>⚠️ The ‘envsetup.ps1’ script only updates environment variables for this powershell instance. If you need to set ‘QNN_SDK_ROOT’ again, just re-run this script.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="line-block">
+<div class="line">The ‘envsetup.ps1’ script only updates environment variables for this powershell instance. If you need to set ‘QNN_SDK_ROOT’ again, just re-run this script.</div>
+</div>
 </div>
 <ol class="arabic">
 <li><p>Run ‘Unblock-File “${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1”’.</p></li>
@@ -180,7 +182,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
-<div class="line">⭐ It’s normal to see that only one of “Visual C++(x86)” and “Visual C++(arm64)” is installed. The installed version should match the hardware of your host machine.</div>
+<div class="line">It’s normal to see that only one of “Visual C++(x86)” and “Visual C++(arm64)” is installed. The installed version should match the hardware of your host machine.</div>
 </div>
 <p>You should see an output like this:</p>
 </div>
@@ -188,10 +190,10 @@
 <li><p>Install QNN SDK dependencies</p></li>
 <li><p>Install Python 3.10.4 - <a class="reference external" href="http://python.org/downloads/release/python-3104/">http://python.org/downloads/release/python-3104/</a></p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <div class="line-block">
-<div class="line">⚠️ Ensure you are downloading the proper version. New releases beyond Python 3.10.4 may not work as expected with the QNN SDK.</div>
+<div class="line">Ensure you are downloading the proper version. New releases beyond Python 3.10.4 may not work as expected with the QNN SDK.</div>
 </div>
 </div>
 <ol class="arabic simple">
@@ -201,10 +203,10 @@
 <li><p>Open the folder at ‘QNN_SDK_ROOT’ in Visual Studio.</p></li>
 <li><p>Open a new powershell terminal in Visual Studio by going to the top-menu “Terminal” and clicking “New Terminal”</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <div class="line-block">
-<div class="line">⚠️ Ensure the new terminal is a Powershell instance.</div>
+<div class="line">Ensure the new terminal is a Powershell instance.</div>
 </div>
 </div>
 <ol class="arabic simple">
@@ -218,7 +220,9 @@
 </ol>
 <p>These are the packages that interpret your ai model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
 <div class="line-block">
-<div class="line">⭐ Install any / all of the frameworks you want to use ai models from.</div>
+<div class="line-block">
+<div class="line">Install any / all of the frameworks you want to use ai models from.</div>
+</div>
 <div class="line">You can install a package by running ‘pip install package==version’.</div>
 <div class="line">Ex. ‘pip install tensorflow==2.10.1’</div>
 </div>
@@ -232,7 +236,7 @@
 | <a class="reference external" href="https://pypi.org/project/onnxruntime/">https://pypi.org/project/onnxruntime/</a> | 1.17.1 | ONNX stands for Open Neural Network Exchange. It is used for running ONNX models with high performance across various hardware platforms. Used with .onnx files. |
 | <a class="reference external" href="https://pypi.org/project/onnxsim/">https://pypi.org/project/onnxsim/</a> | 0.4.36 | It is used for simplifying ONNX models to reduce complexity and improve inference efficiency. Used with .onnx files. |</p>
 <div class="line-block">
-<div class="line">⭐ You can verify your installation by calling ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</div>
+<div class="line">You can verify your installation by calling ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</div>
 </div>
 <ol class="arabic simple">
 <li><p>Install Target Device OS-Specific Toolchain Code</p></li>
@@ -245,10 +249,10 @@
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
 <li><p>Unzip the file.</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <div class="line-block">
-<div class="line">⚠️ If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</div>
+<div class="line">If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</div>
 </div>
 </div>
 <ol class="arabic simple">
@@ -256,10 +260,10 @@
 <li><p>Open a Powershell terminal.</p></li>
 <li><p>Add the location of the unzipped file to your PATH by running:</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <div class="line-block">
-<div class="line">⚠️ Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</div>
+<div class="line">Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</div>
 </div>
 </div>
 <ol class="arabic">
@@ -295,11 +299,11 @@
 </dl>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">⚠️ You may have to reclick the link after logging in to have it load properly.</div>
+<div class="line">You may have to reclick the link after logging in to have it load properly.</div>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
@@ -314,7 +318,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
-<div class="line">⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</div>
+<div class="line">You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</div>
 </div>
 <p>| Backend | Hexagon Architecture | Hexagon SDK Version | Additional Notes |
 | — | — | — | — |
@@ -328,7 +332,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
-<div class="line">⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
+<div class="line">Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
 </div>
 </div>
 <ol class="arabic">
@@ -341,7 +345,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
-<div class="line">⭐ You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</div>
+<div class="line">You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table [here](<a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices</a>).</div>
 </div>
 <p>| Backend | Hexagon Architecture | Hexagon Tools Version | Additional Notes |
 | — | — | — | — |
@@ -355,7 +359,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
-<div class="line">⭐ Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
+<div class="line">Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
 </div>
 </div>
 <ol class="arabic simple">
@@ -375,11 +379,11 @@
 </dl>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">⚠️ You may have to reclick the link after logging in to have it load properly.</div>
+<div class="line">You may have to reclick the link after logging in to have it load properly.</div>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
