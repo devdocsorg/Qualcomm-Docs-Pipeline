@@ -112,7 +112,8 @@
 <div class="line">This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
 </div>
 </div>
-<p>Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</p>
+<section id="install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">
+<h2>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Go to the QNN SDK product page: <a class="reference external" href="https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk">https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk</a></p></li>
 <li><dl class="simple">
@@ -172,7 +173,7 @@
 <div class="line">The ‘envsetup.ps1’ script only updates environment variables for this powershell instance. If you need to set ‘QNN_SDK_ROOT’ again, just re-run this script.</div>
 </div>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="6">
 <li><p>Run ‘Unblock-File “${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1”’.</p></li>
 <li><p>Run ‘&amp; “${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1”’</p>
 <p>This will install the core Windows build tools.</p>
@@ -195,8 +196,10 @@
 </div>
 <p>You should see an output like this:</p>
 </div>
+</section>
+<section id="install-qnn-sdk-dependencies">
+<h2>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>Install QNN SDK dependencies</p></li>
 <li><p>Install Python 3.10.4 - <a class="reference external" href="http://python.org/downloads/release/python-3104/">http://python.org/downloads/release/python-3104/</a></p></li>
 </ol>
 <div class="admonition warning">
@@ -205,10 +208,10 @@
 <div class="line">Ensure you are downloading the proper version. New releases beyond Python 3.10.4 may not work as expected with the QNN SDK.</div>
 </div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Verify the installation worked by running:</p></li>
 </ol>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Open the folder at ‘QNN_SDK_ROOT’ in Visual Studio.</p></li>
 <li><p>Open a new powershell terminal in Visual Studio by going to the top-menu “Terminal” and clicking “New Terminal”</p></li>
 </ol>
@@ -218,15 +221,15 @@
 <div class="line">Ensure the new terminal is a Powershell instance.</div>
 </div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="5">
 <li><p>From the ‘QNN_SDK_ROOT’ folder, run the following command to create and activate a new virtual environment:</p></li>
 </ol>
-<ol class="arabic simple">
+<ol class="arabic simple" start="6">
 <li><p>Update all dependencies by running the following commands in Powershell:</p></li>
 </ol>
-<ol class="arabic simple">
-<li><p>Install Model Frameworks</p></li>
-</ol>
+</section>
+<section id="install-model-frameworks">
+<h2>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h2>
 <p>These are the packages that interpret your ai model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -280,12 +283,11 @@
 <div class="line">You can verify your installation by calling ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</div>
 </div>
 </div>
-<ol class="arabic simple">
-<li><p>Install Target Device OS-Specific Toolchain Code</p></li>
-</ol>
+</section>
+<section id="install-target-device-os-specific-toolchain-code">
+<h2>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h2>
 <p>Depending on the target device’s operating system there may be additional installation requirements.</p>
-<section id="working-with-an-android-target-device">
-<h2>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h2>
+<p>Working with an Android Target Device</p>
 <p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version ‘r26c’) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
@@ -297,7 +299,7 @@
 <div class="line">If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</div>
 </div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Copy the path to your unzipped Android NDK root (the folder should be named ‘android-ndk-r26c’).</p></li>
 <li><p>Open a Powershell terminal.</p></li>
 <li><p>Add the location of the unzipped file to your PATH by running:</p></li>
@@ -308,11 +310,11 @@
 <div class="line">Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</div>
 </div>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="6">
 <li><p>Run ‘Unblock-File “${QNN_SDK_ROOT}/bin/envcheck.ps1’.</p></li>
 <li><p>Run ‘&amp; “${QNN_SDK_ROOT}/bin/envcheck.ps1” -n’.</p>
 <blockquote>
-<div><p>This will verify your environment variables are properly configured.</p>
+<div><p>This will verify your environment variables are proRSTy configured.</p>
 </div></blockquote>
 </li>
 </ol>
@@ -323,7 +325,7 @@
 <p>You can update your Visual Studio to use a specific version of clang++ by following these instructions: <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170">https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170</a>.</p>
 </section>
 <section id="install-dependencies-for-target-hardware-processors">
-<h2>Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
+<h2>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
 <p>Some of the target processors (CPU, GPU, HTP, cDSP, or HTA) require additional dependencies to build models.</p>
 <p><strong>CPU (Central Processing Unit)</strong></p>
 <p>The x86_64 targets are built using clang-14. You can update your Visual Studio to use a specific version of clang++ by following these instructions: <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170">https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170</a>.</p>
@@ -344,13 +346,13 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <div class="line-block">
-<div class="line">You may have to reclick the link after logging in to have it load properly.</div>
+<div class="line">You may have to reclick the link after logging in to have it load proRSTy.</div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Download the Windows version of Qualcomm Package Manager 3 (QPM3).</p></li>
 </ol>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Start QPM3 by running the QPM3 executable. It should have a similar name to ‘QPM.3.0.92.3.Windows-AnyCPU.exe’.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
 <li><p>Once logged in to the Qualcomm Package Manager, search for “Hexagon SDK” and download the proper version for your target device.</p></li>
@@ -408,7 +410,7 @@
 <div class="line">Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
 </div>
 </div>
-<ol class="arabic">
+<ol class="arabic" start="5">
 <li><p>Search for “Hexagon Tools” and download the proper version for your target device.</p>
 <blockquote>
 <div><p>Based on your device’s architecture version, use the following table to determine which versions to download.</p>
@@ -468,7 +470,7 @@
 <div class="line">Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</div>
 </div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="6">
 <li><p>Install clang++ so you can compile code for HTP / DSP hardware.</p></li>
 <li><p>Follow the instructions at <cite>$HEXAGON_SDK_ROOT/docs/readme.html</cite> (where $HEXAGON_SDK_ROOT is the location of the Hexagon SDK installation).</p></li>
 </ol>
@@ -489,14 +491,14 @@
 <p class="admonition-title">Warning</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">You may have to reclick the link after logging in to have it load properly.</div>
+<div class="line">You may have to reclick the link after logging in to have it load proRSTy.</div>
 </div>
 </div></blockquote>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Download the Windows version of Qualcomm Package Manager 3 (QPM3).</p></li>
 </ol>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Start QPM3 by running the QPM3 executable. It should have a similar name to <cite>QPM.3.0.92.3.Windows-AnyCPU.exe</cite>.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
 <li><dl class="simple">
