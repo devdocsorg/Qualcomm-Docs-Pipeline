@@ -53,6 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Windows Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
@@ -126,6 +127,26 @@
 <div class="line">This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
 </div>
 </div>
+<section id="install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">
+<h2>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Go to the QNN SDK product page: <a class="reference external" href="https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk">https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk</a></p></li>
+<li><dl class="simple">
+<dt>Click “Get Software” to download the QNN SDK</dt><dd><ol class="arabic simple">
+<li><p>Note: The QNN SDK is ~2 Gb when unzipped.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Unzip the downloaded SDK.</dt><dd><ol class="arabic simple">
+<li><p>The zipped file will have the version name, for example: <code class="docutils literal notranslate"><span class="pre">v2.22.6.240515</span></code>.</p></li>
+<li><p>When unzipped, the folder should be named <code class="docutils literal notranslate"><span class="pre">qairt</span></code> with a sub-folder that looks like <code class="docutils literal notranslate"><span class="pre">2.22.6.240515</span></code>.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
 <div class="centered-underlined-bold-large">
     Set up your environment
 </div><ol class="arabic">
@@ -214,6 +235,7 @@ clang-cl<span class="w">          </span><span class="m">17</span>.0.3
 --------------------------------------------------------------
 </pre></div>
 </div>
+</section>
 <section id="install-qnn-sdk-dependencies">
 <h2>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
