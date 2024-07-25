@@ -92,8 +92,8 @@
              
   <section id="linux-setup">
 <h1>Linux Setup<a class="headerlink" href="#linux-setup" title="Link to this heading"></a></h1>
-<p id="id1"><strong>Setup for Linux Host (Ubuntu, WSL, and other distros)</strong></p>
-<p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
+<p class="centered" id="id1">
+<strong><strong>Setup for Linux Host (Ubuntu, WSL, and other distros)</strong></strong></p><p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This guide is for a host machine running Linux. If you are using a Windows machine, please follow the instructions for a Windows setup.</p>
@@ -140,8 +140,8 @@
 </dl>
 </li>
 </ol>
-<p><strong>Set up your environment</strong></p>
-<ol class="arabic">
+<p class="centered">
+<strong><strong>Set up your environment</strong></strong></p><ol class="arabic">
 <li><p>Open a terminal.</p></li>
 <li><dl class="simple">
 <dt>Navigate to <code class="docutils literal notranslate"><span class="pre">qairt/&lt;QNN_SDK_VERSION&gt;</span></code> inside the unzipped QNN SDK.</dt><dd><ol class="arabic simple">
@@ -289,8 +289,8 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 <section id="install-target-device-os-specific-toolchain-code">
 <h2>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h2>
 <p>Depending on the target device’s operating system, there may be additional installation requirements.</p>
-<p><strong>Working with an Android Target Device</strong></p>
-<p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
+<p class="centered">
+<strong><strong>Working with an Android Target Device</strong></strong></p><p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
 <li><p>Unzip the file.</p></li>
@@ -318,8 +318,8 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-n
 </pre></div>
 </div>
-<p><strong>Working with a Linux Target Device</strong></p>
-<p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
+<p class="centered">
+<strong><strong>Working with a Linux Target Device</strong></strong></p><p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can verify if you have <code class="docutils literal notranslate"><span class="pre">clang++14</span></code> by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-c
 </pre></div>
@@ -479,8 +479,8 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 <li><p>Install clang++ so you can compile code for HTP/DSP hardware.</p></li>
 <li><p>Follow the instructions at <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT/docs/readme.html</span></code> (where <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT</span></code> is the location of the Hexagon SDK installation).</p></li>
 </ol>
-<p><strong>LPAI (Low Power AI)</strong></p>
-<p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
+<p class="centered">
+<strong><strong>LPAI (Low Power AI)</strong></strong></p><p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
