@@ -7,7 +7,7 @@
   <title>Windows Setup &mdash; Qualcomm® AI Engine Direct</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom_css.css?v=e00ba12e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom_css.css?v=7277b68d" />
 
   
   <!--[if lt IE 9]>
@@ -53,7 +53,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Windows Setup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
@@ -92,8 +91,9 @@
              
   <section id="windows-setup">
 <h1>Windows Setup<a class="headerlink" href="#windows-setup" title="Link to this heading"></a></h1>
-<p class="centered" id="id1">
-<strong><strong>Setup for Windows Host (10, 11, and Snapdragon)</strong></strong></p><p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
+<div class="centered-underlined-bold-large">
+    Setup for Windows Host (10, 11, and Snapdragon)
+</div><p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
@@ -126,28 +126,9 @@
 <div class="line">This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
 </div>
 </div>
-<section id="install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">
-<h2>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
-<li><p>Go to the QNN SDK product page: <a class="reference external" href="https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk">https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk</a></p></li>
-<li><dl class="simple">
-<dt>Click “Get Software” to download the QNN SDK</dt><dd><ol class="arabic simple">
-<li><p>Note: The QNN SDK is ~2 Gb when unzipped.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Unzip the downloaded SDK.</dt><dd><ol class="arabic simple">
-<li><p>The zipped file should have a name like <code class="docutils literal notranslate"><span class="pre">v2.22.6.240515</span></code>.</p></li>
-<li><p>When unzipped, the folder should be named <code class="docutils literal notranslate"><span class="pre">qairt</span></code> with a sub-folder that looks like <code class="docutils literal notranslate"><span class="pre">2.22.6.240515</span></code>.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-<p class="centered">
-<strong><strong>Set up your environment</strong></strong></p><ol class="arabic">
+<div class="centered-underlined-bold-large">
+    Set up your environment
+</div><ol class="arabic">
 <li><dl class="simple">
 <dt>Open an admin powershell terminal by:</dt><dd><ol class="arabic simple">
 <li><p>Pressing the “Windows” button to search for applications</p></li>
@@ -233,7 +214,6 @@ clang-cl<span class="w">          </span><span class="m">17</span>.0.3
 --------------------------------------------------------------
 </pre></div>
 </div>
-</section>
 <section id="install-qnn-sdk-dependencies">
 <h2>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
@@ -336,8 +316,9 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 <section id="install-target-device-os-specific-toolchain-code">
 <h2>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h2>
 <p>Depending on the target device’s operating system there may be additional installation requirements.</p>
-<p class="centered">
-<strong><strong>Working with an Android Target Device</strong></strong></p><p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
+<div class="centered-underlined-bold-large">
+    Working with an Android Target Device
+</div><p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
 <li><p>Unzip the file.</p></li>
@@ -374,20 +355,24 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 </div></blockquote>
 </li>
 </ol>
-<p class="centered">
-<strong><strong>Working with a Linux Target Device</strong></strong></p><p>For Linux target devices you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
+<div class="centered-underlined-bold-large">
+    Working with a Linux Target Device
+</div><p>For Linux target devices you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can update your Visual Studio to use a specific version of clang++ by following these instructions: <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170">https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170</a>.</p>
 </section>
 <section id="install-dependencies-for-target-hardware-processors">
 <h2>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
 <p>Some of the target processors (CPU, GPU, HTP, cDSP, or HTA) require additional dependencies to build models.</p>
-<p class="centered">
-<strong><strong>CPU (Central Processing Unit)</strong></strong></p><p>The x86_64 targets are built using clang-14. You can update your Visual Studio to use a specific version of clang++ by following these instructions: <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170">https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170</a>.</p>
+<div class="centered-underlined-bold-large">
+    CPU (Central Processing Unit)
+</div><p>The x86_64 targets are built using clang-14. You can update your Visual Studio to use a specific version of clang++ by following these instructions: <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170">https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170</a>.</p>
 <p>The ARM CPU targets are built using the Android NDK (see ”Working With an Android Target Device”).</p>
-<p class="centered">
-<strong><strong>GPU (Graphical Processing Unit)</strong></strong></p><p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with minimum version OpenCL 1.2.</p>
-<p class="centered">
-<strong><strong>HTP and DSP</strong></strong></p><p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
+<div class="centered-underlined-bold-large">
+    GPU (Graphical Processing Unit)
+</div><p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with minimum version OpenCL 1.2.</p>
+<div class="centered-underlined-bold-large">
+    HTP and DSP
+</div><p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
 <ol class="arabic">
 <li><dl>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
@@ -526,8 +511,9 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 <li><p>Install clang++ so you can compile code for HTP/DSP hardware.</p></li>
 <li><p>Follow the instructions at <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT/docs/readme.html</span></code> (where <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT</span></code> is the location of the Hexagon SDK installation).</p></li>
 </ol>
-<p class="centered">
-<strong><strong>LPAI (Low Power AI)</strong></strong></p><p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
+<div class="centered-underlined-bold-large">
+    LPAI (Low Power AI)
+</div><p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
 <ol class="arabic">
 <li><dl>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
@@ -545,7 +531,7 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 </dd>
 </dl>
 </li>
-<li><p>Start QPM3 by running the QPM3 executable. It should have a similar name to <code class="docutils literal notranslate"><span class="pre">QPM.3.0.92.3.Windows-AnyCPU.exe</span></code>.</p></li>
+<li><p>Start QPM3 by running the QPM3 executable. It should have a similar name to <cite>QPM.3.0.92.3.Windows-AnyCPU.exe</cite>.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
 <li><dl class="simple">
 <dt>Once logged in to the Qualcomm Package Manager, search for “LPAI” and click the “Extract” button.</dt><dd><ol class="arabic simple">
