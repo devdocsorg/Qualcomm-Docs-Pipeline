@@ -195,15 +195,17 @@
 </div>
 </div>
 <ol class="arabic" start="6">
-<li><p>Run <a href="#id2"><span class="problematic" id="id3">``</span></a>Unblock-File “${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1” <a href="#id4"><span class="problematic" id="id5">``</span></a>.</p></li>
-<li><p>Run <a href="#id6"><span class="problematic" id="id7">``</span></a>&amp; “${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1” ``</p>
-<p>This will install the core Windows build tools.</p>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Unblock-File</span> <span class="pre">&quot;${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1&quot;</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">&amp;</span> <span class="pre">&quot;${QNN_SDK_ROOT}/bin/check-windows-dependency.ps1&quot;</span></code>.</p>
+<blockquote>
+<div><p>This will install the core Windows build tools.</p>
 <ol class="arabic simple">
 <li><p>Each time you run the script it will install more dependencies. You will likely have to re-run the command after it helps you install VS Studio and VS Studio Build Tools.</p></li>
 <li><p>When you have installed all the necessary dependencies, the script will say “All Done”.</p></li>
 </ol>
+</div></blockquote>
 </li>
-<li><p>Run <a href="#id8"><span class="problematic" id="id9">``</span></a>Unblock-File “${QNN_SDK_ROOT}/bin/envcheck.ps1” <a href="#id10"><span class="problematic" id="id11">``</span></a>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Unblock-File</span> <span class="pre">&quot;${QNN_SDK_ROOT}/bin/envcheck.ps1&quot;</span></code>.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">&amp;</span> <span class="pre">&quot;${QNN_SDK_ROOT}/bin/envcheck.ps1&quot;</span> <span class="pre">-m</span></code>.</p>
 <blockquote>
 <div><p>This will verify that you have installed the Microsoft Visual Studio C++ (MSVC) toolchain successfully.</p>
