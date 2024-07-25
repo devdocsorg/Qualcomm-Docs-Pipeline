@@ -329,13 +329,13 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 <section id="install-dependencies-for-target-hardware-processors">
 <h2>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
 <p>Some of the target processors (CPU, GPU, HTP, cDSP, or HTA) require additional dependencies to build models.</p>
-<p><strong>CPU (Central Processing Unit)</strong></p>
-<p>The x86_64 targets are built using clang-14. If working with this kind of target, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
+<p class="centered">
+<strong><strong>CPU (Central Processing Unit)</strong></strong></p><p>The x86_64 targets are built using clang-14. If working with this kind of target, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
 <p>The ARM CPU targets are built using the Android NDK (see “Working With an Android Target Device”).</p>
-<p><strong>GPU (Graphical Processing Unit)</strong></p>
-<p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with a minimum version of OpenCL 1.2.</p>
-<p><strong>HTP and DSP</strong></p>
-<p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
+<p class="centered">
+<strong><strong>GPU (Graphical Processing Unit)</strong></strong></p><p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with a minimum version of OpenCL 1.2.</p>
+<p class="centered">
+<strong><strong>HTP and DSP</strong></strong></p><p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
