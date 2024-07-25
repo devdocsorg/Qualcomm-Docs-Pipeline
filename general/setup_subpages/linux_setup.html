@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setup for Linux Host (Ubuntu, WSL, and other distros) &mdash; Qualcomm® AI Engine Direct</title>
+  <title>Linux Setup &mdash; Qualcomm® AI Engine Direct</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom_css.css?v=e00ba12e" />
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tutorials" href="../tutorials.html" />
-    <link rel="prev" title="Setup for Windows Host (10, 11, and Snapdragon)" href="windows_setup.html" /> 
+    <link rel="prev" title="Windows Setup" href="windows_setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,19 +52,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="windows_setup.html">Setup for Windows Host (10, 11, and Snapdragon)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup for Linux Host (Ubuntu, WSL, and other distros)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="windows_setup.html">Windows Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows_setup.html#setup-for-windows-host-10-11-and-snapdragon">Setup for Windows Host (10, 11, and Snapdragon)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#setup-for-linux-host-ubuntu-wsl-and-other-distros">Setup for Linux Host (Ubuntu, WSL, and other distros)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#working-with-an-android-target-device">Working with an Android Target Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#working-with-a-linux-target-device">Working with a Linux Target Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-dependencies-for-target-hardware-processors">5. Install Dependencies for Target Hardware Processors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lpai-low-power-ai">LPAI (Low Power AI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#optional-additional-packages-for-evaluating-model-accuracy">5. (Optional) Additional Packages for Evaluating Model Accuracy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
@@ -85,7 +82,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">&lt;no title&gt;</a></li>
-      <li class="breadcrumb-item active">Setup for Linux Host (Ubuntu, WSL, and other distros)</li>
+      <li class="breadcrumb-item active">Linux Setup</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -94,23 +91,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>Linux Setup</p>
+  <section id="linux-setup">
+<h1>Linux Setup<a class="headerlink" href="#linux-setup" title="Link to this heading"></a></h1>
+</section>
 <section id="setup-for-linux-host-ubuntu-wsl-and-other-distros">
-<h1>Setup for Linux Host (Ubuntu, WSL, and other distros)<a class="headerlink" href="#setup-for-linux-host-ubuntu-wsl-and-other-distros" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>Setup for Linux Host (Ubuntu, WSL, and other distros)<a class="headerlink" href="#setup-for-linux-host-ubuntu-wsl-and-other-distros" title="Link to this heading"></a></h1>
 <p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This guide is for a host machine running Linux. If you are using a Windows machine, please follow the instructions for a Windows setup.</p>
 </div>
-<p>The QNN SDK allows you to convert an AI model (e.g., a ‘.pt’ model from PyTorch) into instructions that can be run on a target device’s various processing units (CPU, GPU, HTP, cDSP, or LPAI).</p>
+<p>The QNN SDK allows you to convert an AI model (e.g., a <code class="docutils literal notranslate"><span class="pre">.pt</span></code> model from PyTorch) into instructions that can be run on a target device’s various processing units (CPU, GPU, HTP, cDSP, or LPAI).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To learn about acronyms which are new to you, see the Glossary.</p>
+<p>To learn about acronyms which are new to you, see the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/glossary.html">Glossary</a>.</p>
 </div>
 <p>You will need to install the following code to use the QNN SDK:</p>
 <ol class="arabic simple">
 <li><p>The QNN SDK binary and its immediate dependencies.</p></li>
-<li><p>ML frameworks to interpret your AI model files. (e.g., ‘PyTorch’)</p></li>
+<li><p>ML frameworks to interpret your AI model files. (e.g., <code class="docutils literal notranslate"><span class="pre">PyTorch</span></code>)</p></li>
 <li><dl class="simple">
 <dt>Toolchain code for your target device’s operating system.</dt><dd><ol class="arabic simple">
 <li><p>e.g., To develop on Android, you will need to install an Android NDK.</p></li>
@@ -137,8 +136,8 @@
 </li>
 <li><dl class="simple">
 <dt>Unzip the downloaded SDK.</dt><dd><ol class="arabic simple">
-<li><p>The zipped file should have a name like ‘v2.22.6.240515’.</p></li>
-<li><p>When unzipped, the folder should be named ‘qairt’ with a sub-folder that looks like ‘2.22.6.240515’.</p></li>
+<li><p>The zipped file should have a name like <code class="docutils literal notranslate"><span class="pre">v2.22.6.240515</span></code>.</p></li>
+<li><p>When unzipped, the folder should be named <code class="docutils literal notranslate"><span class="pre">qairt</span></code> with a sub-folder that looks like <code class="docutils literal notranslate"><span class="pre">2.22.6.240515</span></code>.</p></li>
 </ol>
 </dd>
 </dl>
@@ -150,31 +149,31 @@
 <ol class="arabic">
 <li><p>Open a terminal.</p></li>
 <li><dl class="simple">
-<dt>Navigate to ‘qairt/&lt;QNN_SDK_VERSION&gt;’ inside the unzipped QNN SDK.</dt><dd><ol class="arabic simple">
-<li><p>Replace ‘&lt;QNN_SDK_VERSION&gt;’ with the name of the file directly under ‘qairt’ - it should look something like ‘2.22.6.240515’.</p></li>
+<dt>Navigate to <code class="docutils literal notranslate"><span class="pre">qairt/&lt;QNN_SDK_VERSION&gt;</span></code> inside the unzipped QNN SDK.</dt><dd><ol class="arabic simple">
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;QNN_SDK_VERSION&gt;</span></code> with the name of the file directly under <code class="docutils literal notranslate"><span class="pre">qairt</span></code> - it should look something like <code class="docutils literal notranslate"><span class="pre">2.22.6.240515</span></code>.</p></li>
 </ol>
 </dd>
 </dl>
 </li>
-<li><p>Run ‘cd bin’.</p></li>
-<li><p>Run ‘source ./envsetup.sh’.</p>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">bin</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">./envsetup.sh</span></code>.</p>
 <blockquote>
-<div><p>This will automatically set the environment variables ‘QNN_SDK_ROOT’ and ‘SNPE_ROOT’.</p>
+<div><p>This will automatically set the environment variables <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> and <code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code>.</p>
 <ol class="arabic simple">
-<li><p>‘QNN_SDK_ROOT’ - This points to the ‘qairt/QNN_SDK_ROOT’ folder where the QNN SDK code lives.</p></li>
-<li><p>‘PYTHONPATH’ - The location of your local Python installation.</p></li>
-<li><p>‘PATH’ - The path to executables that are provided by QNN.</p></li>
-<li><p>‘LD_LIBRARY_PATH’ - The Linux Distribution Library Path points towards the proper build tools for your host machine’s operating system and hardware.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> - This points to the <code class="docutils literal notranslate"><span class="pre">qairt/QNN_SDK_ROOT</span></code> folder where the QNN SDK code lives.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> - The location of your local Python installation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code> - The path to executables that are provided by QNN.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> - The Linux Distribution Library Path points towards the proper build tools for your host machine’s operating system and hardware.</p></li>
 </ol>
 </div></blockquote>
 </li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The ‘envsetup.sh’ script only updates environment variables for the current terminal session. If you need to set ‘QNN_SDK_ROOT’ again, just re-run this script.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">envsetup.sh</span></code> script only updates environment variables for the current terminal session. If you need to set <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> again, just re-run this script.</p>
 </div>
 <ol class="arabic" start="5">
-<li><p>Run ‘sudo ${QNN_SDK_ROOT}/bin/check-linux-dependency.sh’.</p>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">${QNN_SDK_ROOT}/bin/check-linux-dependency.sh</span></code>.</p>
 <blockquote>
 <div><p>This will install the Linux build tools. When you have installed all the necessary dependencies, the script will say “Done!!”.</p>
 </div></blockquote>
@@ -185,7 +184,7 @@
 <p>As the script is running, you will have to confirm additional downloads by pressing “Enter”. The script may take several minutes to complete.</p>
 </div>
 <ol class="arabic" start="6">
-<li><p>Run ‘${QNN_SDK_ROOT}/bin/envcheck -c’.</p>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/bin/envcheck</span> <span class="pre">-c</span></code>.</p>
 <blockquote>
 <div><p>This will verify that you have installed the required toolchain successfully.</p>
 </div></blockquote>
@@ -211,14 +210,14 @@
 <p>Ensure you have Python 3.10. The QNN SDK was verified with Python version 3.10.4.</p>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Run ‘cd ${QNN_SDK_ROOT}’.</p></li>
-<li><p>Install ‘python3.10-venv’ if you don’t have it installed already by running:</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">${QNN_SDK_ROOT}</span></code>.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">python3.10-venv</span></code> if you don’t have it installed already by running:</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.10-venv
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Run the following command to create and activate a new virtual environment (you may rename ‘MY_ENV_NAME’ to any name you prefer):</p></li>
+<li><p>Run the following command to create and activate a new virtual environment (you may rename <code class="docutils literal notranslate"><span class="pre">MY_ENV_NAME</span></code> to any name you prefer):</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>MY_ENV_NAME<span class="w"> </span>--without-pip
 <span class="nb">source</span><span class="w"> </span>MY_ENV_NAME/bin/activate
@@ -227,12 +226,12 @@ python3<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>We have to use the flag ‘–without-pip’ on Debian/Ubuntu systems to avoid a crash since venv will call ‘ensurepip’ at the system level (which is disabled on Debian/Ubuntu). Once we activate our venv, we can then safely call ‘ensurepip’ to create a local pip for installing packages.</p>
+<p>We have to use the flag <code class="docutils literal notranslate"><span class="pre">--without-pip</span></code> on Debian/Ubuntu systems to avoid a crash since venv will call <code class="docutils literal notranslate"><span class="pre">ensurepip</span></code> at the system level (which is disabled on Debian/Ubuntu). Once we activate our venv, we can then safely call <code class="docutils literal notranslate"><span class="pre">ensurepip</span></code> to create a local pip for installing packages.</p>
 </div>
 <ol class="arabic" start="6">
-<li><p>Run ‘which pip3’ to verify that the virtual environment has a local version of ‘pip3’.</p>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">pip3</span></code> to verify that the virtual environment has a local version of <code class="docutils literal notranslate"><span class="pre">pip3</span></code>.</p>
 <blockquote>
-<div><p>You should see a path that is inside your virtual environment (Ex. ‘/MY_ENV_NAME/bin/pip3’)</p>
+<div><p>You should see a path that is inside your virtual environment (Ex. <code class="docutils literal notranslate"><span class="pre">/MY_ENV_NAME/bin/pip3</span></code>)</p>
 </div></blockquote>
 </li>
 <li><p>Update all dependencies by running the following command:</p></li>
@@ -243,11 +242,11 @@ python3<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w
 </section>
 <section id="install-model-frameworks">
 <h2>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h2>
-<p>These are the packages that interpret your AI model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
+<p>These are the packages that interpret your AI model files. For example, the <code class="docutils literal notranslate"><span class="pre">PyTorch</span></code> package interprets <code class="docutils literal notranslate"><span class="pre">.pt</span></code> files.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Install any/all of the frameworks you want to use AI models from. You can install a package by running ‘pip3 install package==version’.
-e.g., ‘pip3 install torch==1.13.1’</p>
+<p>Install any/all of the frameworks you want to use AI models from. You can install a package by running <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">package==version</span></code>.
+e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">torch==1.13.1</span></code></p>
 </div>
 <table class="docutils align-default">
 <thead>
@@ -289,7 +288,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can verify your installation by calling ‘${QNN_SDK_ROOT}/bin/envcheck -a’ which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</p>
+<p>You can verify your installation by calling <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/bin/envcheck</span> <span class="pre">-a</span></code> which will check to see whether these dependencies are installed. These are optional, so just verify that the dependencies you intended to install are actually installed.</p>
 </div>
 </section>
 <section id="install-target-device-os-specific-toolchain-code">
@@ -298,296 +297,15 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </section>
 <section id="working-with-an-android-target-device">
 <h2>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h2>
-<p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version ‘r26c’) by following these steps:</p>
+<p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
 <li><p>Unzip the file.</p></li>
 </ol>
-<blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If your environment is in WSL, the Android NDK must be unzipped under $HOME with the WSL ‘unzip’ command.</p>
-</div>
-</div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>Open a terminal.</p></li>
-<li><p>Add the location of the unzipped file to your PATH by running:</p></li>
-</ol>
-<blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Ensure you update the ‘&lt;path-to-your-android-ndk-root-folder&gt;’ below to be the path to the unzipped ‘android-ndk-r26c’ folder before running the below commands! (Ex. ‘/home/usr/Documents/android-ndk-r26c’)</p>
-</div>
-</div></blockquote>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ANDROID_NDK_ROOT=&lt;path-to-your-android-ndk-root-folder&gt;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.shellrc
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=${ANDROID_NDK_ROOT}:${PATH}&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.shellrc
-<span class="nb">source</span><span class="w"> </span>~/.shellrc
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Verify your environment variables by running:</p></li>
-</ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-n
-</pre></div>
-</div>
-</section>
-<section id="working-with-a-linux-target-device">
-<h2>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h2>
-<p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
-<p>You can verify if you have ‘clang++14’ by running:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-c
-</pre></div>
-</div>
-<p>If not, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
-</section>
-<section id="install-dependencies-for-target-hardware-processors">
-<h2>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
-<p>Some of the target processors (CPU, GPU, HTP, cDSP, or HTA) require additional dependencies to build models.</p>
-<p><strong>CPU (Central Processing Unit)</strong></p>
-<p>The x86_64 targets are built using clang-14. If working with this kind of target, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
-<p>The ARM CPU targets are built using the Android NDK (see “Working With an Android Target Device”).</p>
-<p><strong>GPU (Graphical Processing Unit)</strong></p>
-<p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with a minimum version of OpenCL 1.2.</p>
-<p><strong>HTP and DSP</strong></p>
-<p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
-<ol class="arabic">
-<li><dl>
-<dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
-<li><p>Sign into <a class="reference external" href="https://qpm.qualcomm.com/#/main/tools/details/QPM3">https://qpm.qualcomm.com/#/main/tools/details/QPM3</a>.</p></li>
-</ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<div class="line-block">
-<div class="line">You may have to reclick the link after logging in to have it load properly.</div>
+<p>If your environment is in WSL, the Android NDK must</p>
 </div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
-<li><p>Open the installer and click “Install”.</p></li>
-<li><dl class="simple">
-<dt>Once installed, open “Qualcomm Package Manager”.</dt><dd><ol class="arabic simple">
-<li><p>For Ubuntu, click “Activities” and search for “Qualcomm” then click the blue application.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><p>Start QPM3 by running the QPM3 exectuable.</p></li>
-<li><p>Create a Qualcomm account or log in to your existing one when prompted by QPM3.</p></li>
-<li><p>Once logged in to QPM3, click on “Tools.”</p></li>
-<li><p>Search for “Hexagon SDK” and download the proper version for your target device.</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can find the “Hexagon Architecture” of your chip by looking up your chip type in the “Supported Snapdragon Devices” table <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">here</a></p>
-</div>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Backend</p></th>
-<th class="head"><p>Hexagon Architecture</p></th>
-<th class="head"><p>Hexagon SDK Version</p></th>
-<th class="head"><p>Additional Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>HTP</p></td>
-<td><p>V75</p></td>
-<td><p>5.4.0</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>HTP</p></td>
-<td><p>V73</p></td>
-<td><p>5.4.0</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>HTP</p></td>
-<td><p>V69</p></td>
-<td><p>4.3.0</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>HTP</p></td>
-<td><p>V68</p></td>
-<td><p>4.2.0</p></td>
-<td><p>Not pre-packaged with Hexagon SDK Tools.</p></td>
-</tr>
-<tr class="row-even"><td><p>DSP</p></td>
-<td><p>V66</p></td>
-<td><p>4.1.0</p></td>
-<td><p>Not pre-packaged with Hexagon SDK Tools.</p></td>
-</tr>
-<tr class="row-odd"><td><p>DSP</p></td>
-<td><p>V65</p></td>
-<td><p>3.5.2</p></td>
-<td><p>Must be downloaded manually from <a class="reference external" href="https://developer.qualcomm.com/software/hexagon-dsp-sdk/tools">Hexagon DSP SDK Tools</a> instead of from QPM3. Not pre-packaged with Hexagon SDK Tools.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
-</div>
-<ol class="arabic" start="6">
-<li><p>Search for “Hexagon Tools” and download the proper version for your target device.</p>
-<blockquote>
-<div><p>Based on your device’s architecture version, use the following table to determine which versions to download.</p>
-</div></blockquote>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can find the “Hexagon Architecture” of your chip by looking it up in the “Supported Snapdragon Devices” table <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">here</a></p>
-</div>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Backend</p></th>
-<th class="head"><p>Hexagon Architecture</p></th>
-<th class="head"><p>Hexagon Tools Version</p></th>
-<th class="head"><p>Additional Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>HTP</p></td>
-<td><p>V75</p></td>
-<td><p>8.7.03</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>HTP</p></td>
-<td><p>V73</p></td>
-<td><p>8.6.02</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>HTP</p></td>
-<td><p>V69</p></td>
-<td><p>8.5.03</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>HTP</p></td>
-<td><p>V68</p></td>
-<td><p>8.4.09</p></td>
-<td><p>Not pre-packaged.</p></td>
-</tr>
-<tr class="row-even"><td><p>DSP</p></td>
-<td><p>V66</p></td>
-<td><p>8.4.06</p></td>
-<td><p>Not pre-packaged.</p></td>
-</tr>
-<tr class="row-odd"><td><p>DSP</p></td>
-<td><p>V65</p></td>
-<td><p>8.3.07</p></td>
-<td><p>Not pre-packaged.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Hexagon SDK Tools version 8.4.09/8.4.06/8.3.07 is <strong>not</strong> currently pre-packaged into Hexagon SDK version 4.2.0/4.1.0/3.5.2 respectively. It needs to be downloaded separately and placed at the location ‘$HEXAGON_SDK_ROOT/tools/HEXAGON_Tools/’.</p>
-</div>
-<ol class="arabic simple" start="7">
-<li><p>Install clang++ so you can compile code for HTP/DSP hardware.</p></li>
-<li><p>Follow the instructions at ‘$HEXAGON_SDK_ROOT/docs/readme.html’ (where ‘$HEXAGON_SDK_ROOT’ is the location of the Hexagon SDK installation).</p></li>
-</ol>
-</section>
-<section id="lpai-low-power-ai">
-<h2>LPAI (Low Power AI)<a class="headerlink" href="#lpai-low-power-ai" title="Link to this heading"></a></h2>
-<p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
-<ol class="arabic">
-<li><dl>
-<dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
-<li><p>Sign into <a class="reference external" href="https://qpm.qualcomm.com/#/main/tools/details/QPM3">https://qpm.qualcomm.com/#/main/tools/details/QPM3</a>.</p></li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You may have to reclick the link after logging in to have it load properly.</p>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-<ol class="arabic">
-<li><p>Start QPM3 by running the QPM3 executable.</p></li>
-<li><p>Create a Qualcomm account or log in to your existing one when prompted.</p></li>
-<li><p>Once logged in to the Qualcomm Package Manager, open the “Tools” category.</p></li>
-<li><dl>
-<dt>Search for “LPAI” and click the “Extract” button.</dt><dd><ol class="arabic simple">
-<li><p>This will attempt to install the LPAI code, <strong>but will likely fail</strong> because it is missing the Hexagon SDK dependency.</p></li>
-<li><dl class="simple">
-<dt>Use the error message to determine which version of the Hexagon SDK you need to install fishell.</dt><dd><ol class="arabic simple">
-<li><p>e.g., For v2.4.0 of the LPAI code, it requires version 5.x of the Hexagon SDK.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><p>Install the necessary version of the Hexagon SDK.</p></li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If an installation fails because QPM3 cannot access a folder, move the installation path to one which does not require sudo access.</p>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Then re-install the LPAI code.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-</section>
-<section id="optional-additional-packages-for-evaluating-model-accuracy">
-<h2>5. (Optional) Additional Packages for Evaluating Model Accuracy<a class="headerlink" href="#optional-additional-packages-for-evaluating-model-accuracy" title="Link to this heading"></a></h2>
-<p>If you want to evaluate model accuracy in real time, you may also need to install some of the following dependencies.</p>
-<p>You can install each relevant package by running:
-.. code-block:: shell</p>
-<blockquote>
-<div><p>pip3 install dependency==version
-# e.g., pip3 install pycocotools==2.0.6</p>
-</div></blockquote>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Package</p></th>
-<th class="head"><p>Version</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://pypi.org/project/pycocotools/">pycocotools</a></p></td>
-<td><p>2.0.6</p></td>
-<td><p>Use for working with COCO datasets for object detection, segmentation, and keypoint tasks.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/transformers/">transformers</a></p></td>
-<td><p>4.31.0</p></td>
-<td><p>Use for leveraging pre-trained models for various NLP tasks like text classification, translation, and more.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pypi.org/project/tokenizers/">tokenizers</a></p></td>
-<td><p>0.19.1</p></td>
-<td><p>Use for efficient tokenization of text data, particularly when dealing with large datasets.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/sacrebleu/">sacrebleu</a></p></td>
-<td><p>2.3.1</p></td>
-<td><p>Use for evaluating the quality of machine translation models.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pypi.org/project/scikit-learn/">scikit-learn</a></p></td>
-<td><p>1.3.0</p></td>
-<td><p>Use for implementing machine learning algorithms and models for various predictive tasks.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/OpenNMT-py/">OpenNMT-py</a></p></td>
-<td><p>2.3.0</p></td>
-<td><p>Use for building and training neural machine translation models.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pypi.org/project/sentencepiece/">sentencepiece</a></p></td>
-<td><p>0.1.98</p></td>
-<td><p>Use for unsupervised text tokenization and preprocessing for language models.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
-<p>Now that you’ve finished setting up QNN SDK and its dependencies, you can use the QNN SDK. Follow the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/tutorial2.html">CNN to QNN tutorial</a> to learn how to transform your AI models, build them for your target device, and use them to generate inferences on the information processing cores you choose. Use the QNN SDK to allow your AI models to execute on your specific target device’s cores.</p>
 </section>
 </section>
 
@@ -595,7 +313,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="windows_setup.html" class="btn btn-neutral float-left" title="Setup for Windows Host (10, 11, and Snapdragon)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="windows_setup.html" class="btn btn-neutral float-left" title="Windows Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../tutorials.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
