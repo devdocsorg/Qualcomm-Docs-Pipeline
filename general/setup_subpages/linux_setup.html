@@ -53,18 +53,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windows_setup.html">Setup for Windows Host (10, 11, and Snapdragon)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup for Linux Host (Ubuntu, WSL, and other distros)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#working-with-an-android-target-device">Working with an Android Target Device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#working-with-a-linux-target-device">Working with a Linux Target Device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#install-dependencies-for-target-hardware-processors">5. Install Dependencies for Target Hardware Processors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#lpai-low-power-ai">LPAI (Low Power AI)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#optional-additional-packages-for-evaluating-model-accuracy">5. (Optional) Additional Packages for Evaluating Model Accuracy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup for Linux Host (Ubuntu, WSL, and other distros)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-an-android-target-device">Working with an Android Target Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-a-linux-target-device">Working with a Linux Target Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-dependencies-for-target-hardware-processors">5. Install Dependencies for Target Hardware Processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lpai-low-power-ai">LPAI (Low Power AI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-additional-packages-for-evaluating-model-accuracy">5. (Optional) Additional Packages for Evaluating Model Accuracy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
 </ul>
 
@@ -122,9 +124,8 @@
 <p class="admonition-title">Note</p>
 <p>This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</p>
 </div>
-</section>
 <section id="install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">
-<h1>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h1>
+<h2>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Go to the QNN SDK product page: <a class="reference external" href="https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk">https://www.qualcomm.com/developer/software/qualcomm-ai-engine-direct-sdk</a></p></li>
 <li><dl class="simple">
@@ -145,7 +146,7 @@
 </ol>
 </section>
 <section id="set-up-your-environment">
-<h1>Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Link to this heading"></a></h1>
+<h2>Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Open a terminal.</p></li>
 <li><dl class="simple">
@@ -192,7 +193,7 @@
 </ol>
 </section>
 <section id="install-qnn-sdk-dependencies">
-<h1>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h1>
+<h2>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Install python 3.10 by running the following commands:</p></li>
 </ol>
@@ -241,7 +242,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w
 </div>
 </section>
 <section id="install-model-frameworks">
-<h1>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h1>
+<h2>3. Install Model Frameworks<a class="headerlink" href="#install-model-frameworks" title="Link to this heading"></a></h2>
 <p>These are the packages that interpret your AI model files. For example, the ‘PyTorch’ package interprets ‘.pt’ files.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -292,11 +293,11 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </div>
 </section>
 <section id="install-target-device-os-specific-toolchain-code">
-<h1>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h1>
+<h2>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h2>
 <p>Depending on the target device’s operating system, there may be additional installation requirements.</p>
 </section>
 <section id="working-with-an-android-target-device">
-<h1>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h1>
+<h2>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h2>
 <p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version ‘r26c’) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
@@ -331,7 +332,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </div>
 </section>
 <section id="working-with-a-linux-target-device">
-<h1>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h1>
+<h2>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h2>
 <p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can verify if you have ‘clang++14’ by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-c
@@ -340,7 +341,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p>If not, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
 </section>
 <section id="install-dependencies-for-target-hardware-processors">
-<h1>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h1>
+<h2>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
 <p>Some of the target processors (CPU, GPU, HTP, cDSP, or HTA) require additional dependencies to build models.</p>
 <p><strong>CPU (Central Processing Unit)</strong></p>
 <p>The x86_64 targets are built using clang-14. If working with this kind of target, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
@@ -490,7 +491,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </ol>
 </section>
 <section id="lpai-low-power-ai">
-<h1>LPAI (Low Power AI)<a class="headerlink" href="#lpai-low-power-ai" title="Link to this heading"></a></h1>
+<h2>LPAI (Low Power AI)<a class="headerlink" href="#lpai-low-power-ai" title="Link to this heading"></a></h2>
 <p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
 <ol class="arabic">
 <li><dl>
@@ -537,7 +538,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </ol>
 </section>
 <section id="optional-additional-packages-for-evaluating-model-accuracy">
-<h1>5. (Optional) Additional Packages for Evaluating Model Accuracy<a class="headerlink" href="#optional-additional-packages-for-evaluating-model-accuracy" title="Link to this heading"></a></h1>
+<h2>5. (Optional) Additional Packages for Evaluating Model Accuracy<a class="headerlink" href="#optional-additional-packages-for-evaluating-model-accuracy" title="Link to this heading"></a></h2>
 <p>If you want to evaluate model accuracy in real time, you may also need to install some of the following dependencies.</p>
 <p>You can install each relevant package by running:
 .. code-block:: shell</p>
@@ -585,8 +586,9 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </table>
 </section>
 <section id="next-steps">
-<h1>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h1>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
 <p>Now that you’ve finished setting up QNN SDK and its dependencies, you can use the QNN SDK. Follow the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/tutorial2.html">CNN to QNN tutorial</a> to learn how to transform your AI models, build them for your target device, and use them to generate inferences on the information processing cores you choose. Use the QNN SDK to allow your AI models to execute on your specific target device’s cores.</p>
+</section>
 </section>
 
 
