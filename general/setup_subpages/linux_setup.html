@@ -349,19 +349,16 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 <p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with a minimum version of OpenCL 1.2.</p>
 <p><strong>HTP and DSP</strong></p>
 <p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
-<ol class="arabic simple">
-<li><dl class="simple">
+<ol class="arabic">
+<li><dl>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
 <li><p>Sign into <a class="reference external" href="https://qpm.qualcomm.com/#/main/tools/details/QPM3">https://qpm.qualcomm.com/#/main/tools/details/QPM3</a>.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <div class="line-block">
 <div class="line">You may have to reclick the link after logging in to have it load properly.</div>
+</div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Download the Linux version of Qualcomm Package Manager 3 (QPM3).</p></li>
@@ -374,8 +371,9 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </dl>
 </li>
 </ol>
-</div>
-<ol class="arabic simple" start="2">
+</dd>
+</dl>
+</li>
 <li><p>Start QPM3 by running the QPM3 exectuable.</p></li>
 <li><p>Create a Qualcomm account or log in to your existing one when prompted by QPM3.</p></li>
 <li><p>Once logged in to QPM3, click on “Tools.”</p></li>
@@ -383,7 +381,7 @@ e.g., ‘pip3 install torch==1.13.1’</p>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can find the “Hexagon Architecture” of your chip by looking up your chip type in the “Supported Snapdragon Devices” table <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">here</a> .</p>
+<p>You can find the “Hexagon Architecture” of your chip by looking up your chip type in the “Supported Snapdragon Devices” table <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">here</a></p>
 </div>
 <table class="docutils align-default">
 <thead>
