@@ -54,11 +54,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../setup.html">Setup</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-for-windows-host-10-11-and-snapdragon">Setup for Windows Host (10, 11, and Snapdragon)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-an-android-target-device">Working with an Android Target Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-a-linux-target-device">Working with a Linux Target Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-dependencies-for-target-hardware-processors">5. Install Dependencies for Target Hardware Processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lpai-low-power-ai">LPAI (Low Power AI)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#optional-additional-packages-for-evaluating-model-accuracy">6. (Optional) Additional Packages for Evaluating Model Accuracy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a></li>
 </ul>
@@ -94,9 +99,9 @@
              
   <section id="windows-setup">
 <h1>Windows Setup<a class="headerlink" href="#windows-setup" title="Link to this heading"></a></h1>
-<div class="centered-underlined-bold-large">
-    Setup for Windows Host (10, 11, and Snapdragon)
-</div><p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
+<section id="setup-for-windows-host-10-11-and-snapdragon">
+<span id="id1"></span><h2>Setup for Windows Host (10, 11, and Snapdragon)<a class="headerlink" href="#setup-for-windows-host-10-11-and-snapdragon" title="Link to this heading"></a></h2>
+<p>Follow these instructions to install the Qualcomm AI Engine Direct SDK <strong>(commonly referred to as the QNN SDK)</strong> and all necessary dependencies.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="line-block">
@@ -129,6 +134,7 @@
 <div class="line">This guide contains many recommendations about specific versions of code to use that have been verified to work. Other versions of those dependencies may or may not work, so use them at your own risk.</div>
 </div>
 </div>
+</section>
 <section id="install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">
 <h2>1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)<a class="headerlink" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
@@ -149,9 +155,10 @@
 </dl>
 </li>
 </ol>
-<div class="centered-underlined-bold-large">
-    Set up your environment
-</div><ol class="arabic">
+</section>
+<section id="set-up-your-environment">
+<h2>Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Link to this heading"></a></h2>
+<ol class="arabic">
 <li><dl class="simple">
 <dt>Open an admin powershell terminal by:</dt><dd><ol class="arabic simple">
 <li><p>Pressing the “Windows” button to search for applications</p></li>
@@ -340,9 +347,10 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 <section id="install-target-device-os-specific-toolchain-code">
 <h2>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h2>
 <p>Depending on the target device’s operating system there may be additional installation requirements.</p>
-<div class="centered-underlined-bold-large">
-    Working with an Android Target Device
-</div><p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
+</section>
+<section id="working-with-an-android-target-device">
+<h2>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h2>
+<p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
 <li><p>Unzip the file.</p></li>
@@ -379,9 +387,10 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 </div></blockquote>
 </li>
 </ol>
-<div class="centered-underlined-bold-large">
-    Working with a Linux Target Device
-</div><p>For Linux target devices you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
+</section>
+<section id="working-with-a-linux-target-device">
+<h2>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h2>
+<p>For Linux target devices you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can update your Visual Studio to use a specific version of clang++ by following these instructions: <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170">https://learn.microsoft.com/en-us/cpp/build/clang-support-msbuild?view=msvc-170</a>.</p>
 </section>
 <section id="install-dependencies-for-target-hardware-processors">
@@ -535,9 +544,10 @@ python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$en
 <li><p>Install clang++ so you can compile code for HTP/DSP hardware.</p></li>
 <li><p>Follow the instructions at <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT/docs/readme.html</span></code> (where <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT</span></code> is the location of the Hexagon SDK installation).</p></li>
 </ol>
-<div class="centered-underlined-bold-large">
-    LPAI (Low Power AI)
-</div><p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
+</section>
+<section id="lpai-low-power-ai">
+<h2>LPAI (Low Power AI)<a class="headerlink" href="#lpai-low-power-ai" title="Link to this heading"></a></h2>
+<p>The LPAI backend is designed for offline model preparation only. In order to use QNN with LPAI, you must download the LPAI code using Qualcomm Package Manager.</p>
 <ol class="arabic">
 <li><dl>
 <dt>If you do not already have Qualcomm Package Manager 3 (QPM3) installed, install it by following the steps below:</dt><dd><ol class="arabic simple">
