@@ -55,17 +55,23 @@
 <li class="toctree-l2"><a class="reference internal" href="windows_setup.html">Windows Setup</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Linux Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setup-for-linux-host-ubuntu-wsl-and-other-distros">Setup for Linux Host (Ubuntu, WSL, and other distros)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-qualcomm-ai-engine-direct-aka-the-qnn-sdk">1. Install Qualcomm AI Engine Direct (aka the “QNN SDK”)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#install-qnn-sdk-dependencies">2. Install QNN SDK dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-model-frameworks">3. Install Model Frameworks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#working-with-an-android-target-device">Working with an Android Target Device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#working-with-a-linux-target-device">Working with a Linux Target Device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-dependencies-for-target-hardware-processors">5. Install Dependencies for Target Hardware Processors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cpu-central-processing-unit">CPU (Central Processing Unit)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gpu-graphical-processing-unit">GPU (Graphical Processing Unit)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#htp-and-dsp">HTP and DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-target-device-os-specific-toolchain-code">4. Install Target Device OS-Specific Toolchain Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-an-android-target-device">Working with an Android Target Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-a-linux-target-device">Working with a Linux Target Device</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-dependencies-for-target-hardware-processors">5. Install Dependencies for Target Hardware Processors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cpu-central-processing-unit">CPU (Central Processing Unit)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpu-graphical-processing-unit">GPU (Graphical Processing Unit)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htp-and-dsp">HTP and DSP</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#lpai-low-power-ai">LPAI (Low Power AI)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#optional-additional-packages-for-evaluating-model-accuracy">6. (Optional) Additional Packages for Evaluating Model Accuracy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a></li>
@@ -151,9 +157,8 @@
 </dl>
 </li>
 </ol>
-</section>
 <section id="set-up-your-environment">
-<h2>Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Link to this heading"></a></h2>
+<h3>Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Open a terminal.</p></li>
 <li><dl class="simple">
@@ -198,6 +203,7 @@
 </div></blockquote>
 </li>
 </ol>
+</section>
 </section>
 <section id="install-qnn-sdk-dependencies">
 <h2>2. Install QNN SDK dependencies<a class="headerlink" href="#install-qnn-sdk-dependencies" title="Link to this heading"></a></h2>
@@ -302,9 +308,8 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 <section id="install-target-device-os-specific-toolchain-code">
 <h2>4. Install Target Device OS-Specific Toolchain Code<a class="headerlink" href="#install-target-device-os-specific-toolchain-code" title="Link to this heading"></a></h2>
 <p>Depending on the target device’s operating system, there may be additional installation requirements.</p>
-</section>
 <section id="working-with-an-android-target-device">
-<h2>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h2>
+<h3>Working with an Android Target Device<a class="headerlink" href="#working-with-an-android-target-device" title="Link to this heading"></a></h3>
 <p>For working with Android devices, you will need to install a corresponding Android NDK (Native Developer Kit). You can install the recommended version (Android NDK version <code class="docutils literal notranslate"><span class="pre">r26c</span></code>) by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Download the Android NDK: <a class="reference external" href="https://dl.google.com/android/repository/android-ndk-r26c-linux.zip">https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</a></p></li>
@@ -335,7 +340,7 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 </div>
 </section>
 <section id="working-with-a-linux-target-device">
-<h2>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h2>
+<h3>Working with a Linux Target Device<a class="headerlink" href="#working-with-a-linux-target-device" title="Link to this heading"></a></h3>
 <p>For Linux target devices, you will likely need to use clang++14 to build models for them using the QNN SDK. Later versions may work but have not been verified.</p>
 <p>You can verify if you have <code class="docutils literal notranslate"><span class="pre">clang++14</span></code> by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/envcheck<span class="w"> </span>-c
@@ -343,21 +348,21 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 </div>
 <p>If not, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
 </section>
+</section>
 <section id="install-dependencies-for-target-hardware-processors">
 <h2>5. Install Dependencies for Target Hardware Processors<a class="headerlink" href="#install-dependencies-for-target-hardware-processors" title="Link to this heading"></a></h2>
 <p>Some of the target processors (CPU, GPU, HTP, cDSP, or HTA) require additional dependencies to build models.</p>
-</section>
 <section id="cpu-central-processing-unit">
-<h2>CPU (Central Processing Unit)<a class="headerlink" href="#cpu-central-processing-unit" title="Link to this heading"></a></h2>
+<h3>CPU (Central Processing Unit)<a class="headerlink" href="#cpu-central-processing-unit" title="Link to this heading"></a></h3>
 <p>The x86_64 targets are built using clang-14. If working with this kind of target, please install clang++14 from LLVM: <a class="reference external" href="https://clang.llvm.org/cxx_status.html">https://clang.llvm.org/cxx_status.html</a></p>
 <p>The ARM CPU targets are built using the Android NDK (see “Working With an Android Target Device”).</p>
 </section>
 <section id="gpu-graphical-processing-unit">
-<h2>GPU (Graphical Processing Unit)<a class="headerlink" href="#gpu-graphical-processing-unit" title="Link to this heading"></a></h2>
+<h3>GPU (Graphical Processing Unit)<a class="headerlink" href="#gpu-graphical-processing-unit" title="Link to this heading"></a></h3>
 <p>The GPU backend kernels are written based on OpenCL. The GPU operations must be implemented based on OpenCL headers with a minimum version of OpenCL 1.2.</p>
 </section>
 <section id="htp-and-dsp">
-<h2>HTP and DSP<a class="headerlink" href="#htp-and-dsp" title="Link to this heading"></a></h2>
+<h3>HTP and DSP<a class="headerlink" href="#htp-and-dsp" title="Link to this heading"></a></h3>
 <p>Compiling for both HTP and DSP hardware requires the use of the Qualcomm Hexagon SDK and Hexagon SDK Tools which you can install by following these steps.</p>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -502,6 +507,7 @@ e.g., <code class="docutils literal notranslate"><span class="pre">pip3</span> <
 <li><p>Install clang++ so you can compile code for HTP/DSP hardware.</p></li>
 <li><p>Follow the instructions at <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT/docs/readme.html</span></code> (where <code class="docutils literal notranslate"><span class="pre">$HEXAGON_SDK_ROOT</span></code> is the location of the Hexagon SDK installation).</p></li>
 </ol>
+</section>
 </section>
 <section id="lpai-low-power-ai">
 <h2>LPAI (Low Power AI)<a class="headerlink" href="#lpai-low-power-ai" title="Link to this heading"></a></h2>
