@@ -368,12 +368,19 @@ td > p:has(a) {
     margin-top: 2em;
 }
 
-ul.simple {
+
+.wy-nav-content .toctree-wrapper ul {
     list-style-type: none;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
 }
 
-ul.simple > li {
-    padding-left: 1em; /* Adjust padding as needed */
-    text-indent: -1em; /* Adjust text indent as needed */
+.wy-nav-content .toctree-wrapper ul li {
+    margin: 0;
+    padding: 0 0 0 1em;
+    text-indent: -1em;
+}
+
+.wy-nav-content .toctree-wrapper ul li a {
+    text-decoration: none; /* Remove underline, if desired */
 }
