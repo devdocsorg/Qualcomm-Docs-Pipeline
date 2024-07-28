@@ -367,3 +367,13 @@ td > p:has(a) {
     margin-bottom: 2em;
     margin-top: 2em;
 }
+
+ul.simple {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.simple > li {
+    padding-left: 1em; /* Adjust padding as needed */
+    text-indent: -1em; /* Adjust text indent as needed */
+}
