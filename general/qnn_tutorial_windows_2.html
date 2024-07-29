@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build your QNN model for target device architecture &mdash; Qualcomm® AI Engine Direct</title>
+  <title>Windows Target Device (10, 11, and Snapdragon) &mdash; Qualcomm® AI Engine Direct</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/custom_css.css?v=22c3e01d" />
@@ -87,7 +87,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
           <li class="breadcrumb-item"><a href="qnn_tutorial_windows_1.html">CNN to QNN for Windows Host</a></li>
-      <li class="breadcrumb-item active">Build your QNN model for target device architecture</li>
+      <li class="breadcrumb-item active">Windows Target Device (10, 11, and Snapdragon)</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -96,12 +96,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="admonition note">
+  <section id="windows-target-device-10-11-and-snapdragon">
+<h1>Windows Target Device (10, 11, and Snapdragon)<a class="headerlink" href="#windows-target-device-10-11-and-snapdragon" title="Link to this heading"></a></h1>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This section contains the final two steps of the CNN to QNN tutorial. If you have not completed steps 1 and 2, please return to the starting page ::doc:: <cite>here&lt;qnn_tutorial_windows_1&gt;</cite>.</p>
+<p>This section contains the final two steps of the CNN to QNN tutorial. If you have not completed steps 1 and 2, please return to the starting page:
+.. doc:: qnn_tutorial_windows_1.rst</p>
 </div>
 <section id="build-your-qnn-model-for-target-device-architecture">
-<h1>Build your QNN model for target device architecture<a class="headerlink" href="#build-your-qnn-model-for-target-device-architecture" title="Link to this heading"></a></h1>
+<h2>Build your QNN model for target device architecture<a class="headerlink" href="#build-your-qnn-model-for-target-device-architecture" title="Link to this heading"></a></h2>
 <p>Once the CNN model has been converted into QNN format, the next step is to build it so it can run on the target device’s operating system with <code class="docutils literal notranslate"><span class="pre">qnn-model-lib-generator</span></code>.</p>
 <p>Based on the operating system and architecture of your target device, choose one of the following build instructions.</p>
 <div class="admonition warning">
@@ -149,12 +152,12 @@
 <p>That <code class="docutils literal notranslate"><span class="pre">Inception_v3.dll</span></code> file is what you will use on the target device to actually execute inferences. See the instructions below for how to run inferences on the specific processors you care about using <code class="docutils literal notranslate"><span class="pre">Inception_v3.dll</span></code>.</p>
 </section>
 <section id="use-the-built-model-on-specific-processors">
-<h1>Use the built model on specific processors<a class="headerlink" href="#use-the-built-model-on-specific-processors" title="Link to this heading"></a></h1>
+<h2>Use the built model on specific processors<a class="headerlink" href="#use-the-built-model-on-specific-processors" title="Link to this heading"></a></h2>
 <p>Now that you have an executable version of your model, the next step is to transfer it to the target processor and run inferences with it. If you haven’t already, ensure that you follow the processor-specific Setup instructions here.</p>
 <p>Pick which processor below you would like to run your model on for specific instructions on transferring the relevant files, then executing an inference with your model.</p>
 </section>
 <section id="shared-steps">
-<h1>Shared Steps<a class="headerlink" href="#shared-steps" title="Link to this heading"></a></h1>
+<h2>Shared Steps<a class="headerlink" href="#shared-steps" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">&amp;</span> <span class="pre">ls</span> <span class="pre">${QNN_SDK_ROOT}/bin</span></code> to see the list of all supported target device architectures. (Each folder represents a different architecture)</p></li>
 <li><p>Set the terminal variable <code class="docutils literal notranslate"><span class="pre">$QNN_TARGET_ARCH</span></code> to the name of your target device’s architecture.</p>
@@ -165,7 +168,7 @@
 </ol>
 </section>
 <section id="cpu">
-<h1>CPU<a class="headerlink" href="#cpu" title="Link to this heading"></a></h1>
+<h2>CPU<a class="headerlink" href="#cpu" title="Link to this heading"></a></h2>
 <p><strong>Moving over all relevant files:</strong></p>
 <ol class="arabic">
 <li><p>Connect to the target device with <code class="docutils literal notranslate"><span class="pre">mstsc</span> <span class="pre">-v</span> <span class="pre">&lt;your</span> <span class="pre">device</span> <span class="pre">IP&gt;</span></code>.</p></li>
@@ -219,7 +222,7 @@
 </ol>
 </section>
 <section id="gpu">
-<h1>GPU<a class="headerlink" href="#gpu" title="Link to this heading"></a></h1>
+<h2>GPU<a class="headerlink" href="#gpu" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Connect to the target device with <code class="docutils literal notranslate"><span class="pre">mstsc</span> <span class="pre">-v</span> <span class="pre">&lt;your</span> <span class="pre">device</span> <span class="pre">IP&gt;</span></code>.</p></li>
 <li><p>On the target device, create the folder <code class="docutils literal notranslate"><span class="pre">C:/qnn_test_package</span></code>.</p></li>
@@ -268,7 +271,7 @@
 </ol>
 </section>
 <section id="dsp">
-<h1>DSP<a class="headerlink" href="#dsp" title="Link to this heading"></a></h1>
+<h2>DSP<a class="headerlink" href="#dsp" title="Link to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>DSP processors require quantized models instead of floating point models. If you do not have a quantized model, please follow Step 1 of the CNN to QNN tutorial to build one.</p>
@@ -328,7 +331,7 @@ py<span class="w"> </span>-3<span class="w"> </span>./show_inceptionv3_classific
 </ol>
 </section>
 <section id="htp">
-<h1>HTP<a class="headerlink" href="#htp" title="Link to this heading"></a></h1>
+<h2>HTP<a class="headerlink" href="#htp" title="Link to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>HTP processors require quantized models instead of floating point models. If you do not have a quantized model, please follow Step 1 of the CNN to QNN tutorial to build one.</p>
@@ -454,7 +457,7 @@ Copy-Item<span class="w"> </span>-Path<span class="w"> </span><span class="s2">&
 </div></blockquote>
 </section>
 <section id="lpai">
-<h1>LPAI<a class="headerlink" href="#lpai" title="Link to this heading"></a></h1>
+<h2>LPAI<a class="headerlink" href="#lpai" title="Link to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>LPAI processors are designed for <strong>offline model preparation only</strong>. This means you must build the model first, then transfer it.</p>
@@ -518,6 +521,7 @@ Copy-Item<span class="w"> </span>-Path<span class="w"> </span><span class="s2">&
 <span class="w">              </span>--binary_file<span class="w"> </span>tmp
 </pre></div>
 </div>
+</section>
 </section>
 
 

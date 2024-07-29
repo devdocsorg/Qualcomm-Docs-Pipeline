@@ -100,7 +100,8 @@
 <h1>Linux Target Device (Android / Linux Embedded / Ubuntu)<a class="headerlink" href="#linux-target-device-android-linux-embedded-ubuntu" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is <strong>Part 2</strong> of the CNN to QNN tutorial for Windows host machines. If you have not completed Part 1, please do so <cite>here&lt;qnn_tutorial_linux_1&gt;</cite>.</p>
+<p>This is <strong>Part 2</strong> of the CNN to QNN tutorial for Windows host machines. If you have not completed Part 1, please click the link below
+.. doc:: qnn_tutorial_linux_1.rst</p>
 </div>
 <section id="model-build-on-linux-host">
 <h2>Model Build on Linux Host<a class="headerlink" href="#model-build-on-linux-host" title="Link to this heading"></a></h2>
@@ -151,14 +152,17 @@
 <span class="w">    </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="s">&quot;Inception_v3.bin&quot;</span><span class="w"> </span>\
 <span class="w">    </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">model_libs</span><span class="w"> </span>\
 <span class="w">    </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">$</span><span class="p">{</span><span class="n">QNN_TARGET_ARCH</span><span class="p">}</span>
-
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">c</span><span class="err">`</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">indicates</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="p">.</span><span class="n">cpp</span><span class="err">`</span><span class="w"> </span><span class="n">QNN</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">file</span><span class="p">.</span>
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">b</span><span class="err">`</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">indicates</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="p">.</span><span class="n">bin</span><span class="err">`</span><span class="w"> </span><span class="n">QNN</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="err">`</span><span class="n">b</span><span class="err">`</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">optional</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">runtime</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="p">.</span><span class="n">cpp</span><span class="err">`</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="n">fail</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">needs</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="p">.</span><span class="n">bin</span><span class="err">`</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">recommended</span><span class="p">).</span>
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">o</span><span class="err">`</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">folder</span><span class="p">.</span>
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">t</span><span class="err">`</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Indicate</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">architecture</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="k">for</span><span class="p">.</span>
 </pre></div>
 </div>
 </li>
+</ol>
+<ul class="simple">
+<li><p><cite>c</cite> - This indicates the path to the <cite>.cpp</cite> QNN model file.</p></li>
+<li><p><cite>b</cite> - This indicates the path to the <cite>.bin</cite> QNN model file. (<cite>b</cite> is optional, but at runtime, the <cite>.cpp</cite> file could fail if it needs the <cite>.bin</cite> file, so it is recommended).</p></li>
+<li><p><cite>o</cite> - The path to the output folder.</p></li>
+<li><p><cite>t</cite> - Indicate which architecture to build for.</p></li>
+</ul>
+<ol class="arabic simple" start="7">
 <li><dl class="simple">
 <dt>The output <cite>.so</cite> file will be inside <cite>model_libs</cite> with a name that corresponds to the target architecture specified with <cite>-t</cite> in the above command. For example:</dt><dd><ul class="simple">
 <li><p><cite>model_libs/aarch64-android/libInception_v3.so</cite></p></li>
@@ -512,24 +516,27 @@
 </li>
 </ol>
 <p><strong>Running the built model</strong></p>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>Connect to the target device and create a folder for the model files and input data (target specific).</dt><dd><ol class="arabic simple">
-<li><p>For an OE-Linux target device:</p></li>
+<ol class="arabic">
+<li><dl>
+<dt>Connect to the target device and create a folder for the model files and input data (target specific).</dt><dd><ol class="arabic">
+<li><p>For an OE-Linux target device:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>shell<span class="w"> </span><span class="s2">&quot;mount -o remount,rw / &amp;&amp; mkdir -p /data/local/tmp &amp;&amp; cd /data/local/tmp &amp;&amp; ln -s /etc/ /data/local/tmp &amp;&amp; chmod -R 777 /data/local/tmp &amp;&amp; mkdir -p /data/local/tmp/inception_v3&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>For an Android target:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>shell<span class="w"> </span><span class="s2">&quot;mkdir -p /data/local/tmp/inception_v3&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ol>
 </dd>
 </dl>
 </li>
-</ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>adb<span class="w"> </span>shell<span class="w"> </span><span class="s2">&quot;mount -o remount,rw / &amp;&amp; mkdir -p /data/local/tmp &amp;&amp; cd /data/local/tmp &amp;&amp; ln -s /etc/ /data/local/tmp &amp;&amp; chmod -R 777 /data/local/tmp &amp;&amp; mkdir -p /data/local/tmp/inception_v3&quot;</span>
-
-<span class="m">2</span>.<span class="w"> </span>For<span class="w"> </span>an<span class="w"> </span>Android<span class="w"> </span>target:
-</pre></div>
-</div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>shell<span class="w"> </span><span class="s2">&quot;mkdir -p /data/local/tmp/inception_v3&quot;</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
 <li><p>Look up your target device’s snapdragon architecture in this “Supported Snapdragon Devices” table and set <code class="docutils literal notranslate"><span class="pre">$HTP_ARCH</span></code> to <code class="docutils literal notranslate"><span class="pre">hexagon-vXX</span></code> where XX is the version of your Hexagon Architecture. For example:</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$HTP_ARCH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hexagon-v68&quot;</span>
