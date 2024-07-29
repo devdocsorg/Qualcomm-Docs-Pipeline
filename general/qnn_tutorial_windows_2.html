@@ -496,11 +496,11 @@ Copy-Item<span class="w"> </span>-Path<span class="w"> </span><span class="s2">&
 </pre></div>
 </div>
 <p>To configure <code class="docutils literal notranslate"><span class="pre">lpaiParams.conf</span></code>, consider using the following optional settings:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">lpai_backe</span><span class="kc">n</span><span class="err">d</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>lpai_backend
 <span class="w">   </span><span class="s2">&quot;target_env&quot;</span><span class="w">              </span><span class="s2">&quot;arm/adsp/x86/tensilica, default adsp&quot;</span>
 <span class="w">   </span><span class="s2">&quot;enable_hw_ver&quot;</span><span class="w">           </span><span class="s2">&quot;v1/v2/v3/v4, default v4&quot;</span>
-<span class="err">lpai_graph</span>
-<span class="w">   </span><span class="err">prepare</span>
+lpai_graph
+<span class="w">   </span>prepare
 <span class="w">      </span><span class="s2">&quot;enable_layer_fusion&quot;</span><span class="w">     </span><span class="s2">&quot;true/false,     default true&quot;</span>
 <span class="w">      </span><span class="s2">&quot;enable_batchnorm_fold&quot;</span><span class="w">   </span><span class="s2">&quot;true/false,     default false&quot;</span>
 <span class="w">      </span><span class="s2">&quot;enable_channel_align&quot;</span><span class="w">    </span><span class="s2">&quot;true/false,     default false&quot;</span>
