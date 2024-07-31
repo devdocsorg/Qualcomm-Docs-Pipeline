@@ -90,6 +90,10 @@
 <p class="admonition-title">Warning</p>
 <p>For cases where the “host machine” and “target device” are the same, you will need to adapt the steps to handle files locally instead of transferring them to a remote device.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please continue to use the same terminal you were using on your host machine from part 1.</p>
+</div>
 <ol class="arabic">
 <li><p>Create a directory on your host machine where your newly built files will live by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/qnn_tmp
@@ -230,15 +234,15 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 </div>
 <ol class="arabic simple" start="3">
 <li><p>On your target device, run <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> to get the IP address of your target device.</p></li>
-<li><p>On your host machine, set a console variable for your target device’s <code class="docutils literal notranslate"><span class="pre">ipv4</span></code> address from above (replacing <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> below).</p></li>
+<li><p>On your host machine, set a console variable for your target device’s <code class="docutils literal notranslate"><span class="pre">inet</span> <span class="pre">addr</span></code> from above to see its <code class="docutils literal notranslate"><span class="pre">ipv4</span></code> address (replacing <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> below).</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">TARGET_IP</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Also set the username you would like to sign into on your target device (you can find it by running <code class="docutils literal notranslate"><span class="pre">whoami</span></code> on your target device if you are logged into the desired account).</p></li>
+<li><p>Also set the username of the desired account on your target device (you can find it by running <code class="docutils literal notranslate"><span class="pre">whoami</span></code> on your target device if you are logged into the desired account).</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">TARGET_USER</span><span class="o">=</span><span class="s2">&quot;yourusername&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">TARGET_USER</span><span class="o">=</span><span class="s2">&quot;your-linux-account-username&quot;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="6">
@@ -253,7 +257,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>From this point on you should be able to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> from the terminal. You may need to open another terminal to do so though.</p>
+<p>From this point on you should be able to connect to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> from the terminal. You may need to open another terminal to do so though.</p>
 </div>
 </div></blockquote>
 <p><strong>Sub-Step 3: Follow the steps below for whichever processor you would like to run your model on.</strong></p>
