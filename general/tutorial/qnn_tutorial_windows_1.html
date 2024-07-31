@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CNN to QNN for Linux Host &mdash; Qualcomm® AI Engine Direct</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom_css.css?v=22c3e01d" />
+  <title>CNN to QNN for Windows Host &mdash; Qualcomm® AI Engine Direct</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom_css.css?v=22c3e01d" />
 
   
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=474e5199"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linux Target Device (Android / Linux Embedded / Ubuntu)" href="qnn_tutorial_linux_2.html" />
-    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=474e5199"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Windows Target Device (10, 11, and Snapdragon)" href="qnn_tutorial_windows_2.html" />
+    <link rel="prev" title="Windows Target Device (x86_64 / Arm 64 / Snapdragon Architectures)" href="qnn_tutorial_linux_3.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,14 +34,14 @@
 
           
           
-          <a href="../index.html" class="icon icon-home">
+          <a href="../../index.html" class="icon icon-home">
             Qualcomm® AI Engine Direct
           </a>
               <div class="version">
                 2.24
               </div>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -49,26 +49,26 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#getting-started">Getting Started</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">CNN to QNN for Linux Host</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#getting-started">Getting Started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="qnn_tutorial_linux_1.html">CNN to QNN for Linux Host</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CNN to QNN for Windows Host</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#tutorial-setup">Tutorial Setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#converting-the-cnn-model-into-a-qnn-model">Converting the CNN model into a QNN model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-the-model-for-a-target-device">Build the Model for a Target Device</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="qnn_tutorial_windows_1.html">CNN to QNN for Windows Host</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#advanced">Advanced</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#custom-operators">Custom Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#windows">Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#migrating">Migrating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#advanced">Advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#custom-operators">Custom Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#migrating">Migrating</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 </ul>
 
         </div>
@@ -77,16 +77,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Qualcomm® AI Engine Direct</a>
+          <a href="../../index.html">Qualcomm® AI Engine Direct</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
-      <li class="breadcrumb-item active">CNN to QNN for Linux Host</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+          <li class="breadcrumb-item"><a href="qnn_tutorial_landing.html">&lt;no title&gt;</a></li>
+      <li class="breadcrumb-item active">CNN to QNN for Windows Host</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -95,8 +96,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="cnn-to-qnn-for-linux-host">
-<h1>CNN to QNN for Linux Host<a class="headerlink" href="#cnn-to-qnn-for-linux-host" title="Link to this heading"></a></h1>
+  <section id="cnn-to-qnn-for-windows-host">
+<h1>CNN to QNN for Windows Host<a class="headerlink" href="#cnn-to-qnn-for-windows-host" title="Link to this heading"></a></h1>
 <p>This guide will teach you how to convert your CNN model into an executable that can be run on a target device’s processors using <strong>Qualcomm AI Engine Direct (aka the QNN SDK)</strong>.</p>
 <p>In order to do that, you will learn how to:</p>
 <ol class="arabic simple">
@@ -104,7 +105,7 @@
 <li><p>Build that model for a specific target device operating system. (Ex. Android)</p></li>
 <li><p>Transfer and use the model to make inferences on the desired processing unit. (Ex. GPU)</p></li>
 </ol>
-<p><a class="reference external" href="https://documents.lucid.app/documents/6c0d4dc4-2dd3-4186-9c60-915d23f515eb/pages/0_0?a=644&amp;x=-163&amp;y=-83&amp;w=1345&amp;h=926&amp;store=1&amp;accept=image%2F*&amp;auth=LCA%20a10a7cfe82c0570cb4fbea60cb06888e64bd3beb8679ef88c499e601dbd17d68-ts%3D1722055637">Documentation Link</a></p>
+<p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">Supported Snapdragon Devices</a></p>
 <section id="tutorial-setup">
 <h2>Tutorial Setup<a class="headerlink" href="#tutorial-setup" title="Link to this heading"></a></h2>
 <section id="install-the-qnn-sdk">
@@ -147,7 +148,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">TENSORFLOW_HOME</span></code> is needed because the <code class="docutils literal notranslate"><span class="pre">setup_inceptionv3.py</span></code> script uses TensorFlow utilities like <code class="docutils literal notranslate"><span class="pre">optimize_for_inference.py</span></code>, which are present in the TensorFlow installation directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TENSORFLOW_HOME</span></code> is needed because the <code class="docutils literal notranslate"><span class="pre">setup_inceptionv3.py</span></code> script uses TensorFlow utilities like <code class="docutils literal notranslate"><span class="pre">optimize_for_inference.py</span></code>, which are present in the TensorFlow installation directory.</p>
 </div>
 <ol class="arabic" start="3">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">$env:TENSORFLOW_HOME</span></code> to verify that the environment variable was set properly.</p></li>
@@ -237,15 +238,15 @@
 <h2>Build the Model for a Target Device<a class="headerlink" href="#build-the-model-for-a-target-device" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qnn_tutorial_linux_2.html">Linux Target Device (Android / Linux Embedded / Ubuntu)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#model-build-on-linux-host">Model Build on Linux Host</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#optional-using-the-provided-setup-script">Optional: Using the Provided Setup Script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#use-the-built-model-on-specific-processors">Use the built model on specific processors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#cpu-model-execution">CPU Model Execution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#gpu-model-execution">GPU Model Execution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#dsp-model-execution">DSP Model Execution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#htp-model-execution">HTP Model Execution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_linux_2.html#low-power-ai-lpai-model-execution">Low Power AI (LPAI) Model Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qnn_tutorial_windows_2.html">Windows Target Device (10, 11, and Snapdragon)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#build-your-qnn-model-for-target-device-architecture">Build your QNN model for target device architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#use-the-built-model-on-specific-processors">Use the built model on specific processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#shared-steps">Shared Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#cpu">CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#gpu">GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#dsp">DSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#htp">HTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#lpai">LPAI</a></li>
 </ul>
 </li>
 </ul>
@@ -257,8 +258,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="qnn_tutorial_linux_2.html" class="btn btn-neutral float-right" title="Linux Target Device (Android / Linux Embedded / Ubuntu)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="qnn_tutorial_linux_3.html" class="btn btn-neutral float-left" title="Windows Target Device (x86_64 / Arm 64 / Snapdragon Architectures)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qnn_tutorial_windows_2.html" class="btn btn-neutral float-right" title="Windows Target Device (10, 11, and Snapdragon)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
