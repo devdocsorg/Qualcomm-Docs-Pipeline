@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Step 3. Model Build on Linux Host for Linux Target &mdash; Qualcomm® AI Engine Direct</title>
+  <title>CNN to QNN for Linux Host on Linux Target &mdash; Qualcomm® AI Engine Direct</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom_css.css?v=22c3e01d" />
@@ -88,7 +88,7 @@
           <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
           <li class="breadcrumb-item"><a href="qnn_tutorial_landing.html">&lt;no title&gt;</a></li>
           <li class="breadcrumb-item"><a href="qnn_tutorial_linux_1.html">CNN to QNN for Linux Host</a></li>
-      <li class="breadcrumb-item active">Step 3. Model Build on Linux Host for Linux Target</li>
+      <li class="breadcrumb-item active">CNN to QNN for Linux Host on Linux Target</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -97,12 +97,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="admonition note">
+  <section id="cnn-to-qnn-for-linux-host-on-linux-target">
+<h1>CNN to QNN for Linux Host on Linux Target<a class="headerlink" href="#cnn-to-qnn-for-linux-host-on-linux-target" title="Link to this heading"></a></h1>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is <strong>Part 2</strong> of the CNN to QNN tutorial for Linux host machines. If you have not completed Part 1, please do so <a class="reference internal" href="qnn_tutorial_linux_1.html"><span class="doc">here</span></a>.</p>
 </div>
 <section id="step-3-model-build-on-linux-host-for-linux-target">
-<h1>Step 3. Model Build on Linux Host for Linux Target<a class="headerlink" href="#step-3-model-build-on-linux-host-for-linux-target" title="Link to this heading"></a></h1>
+<h2>Step 3. Model Build on Linux Host for Linux Target<a class="headerlink" href="#step-3-model-build-on-linux-host-for-linux-target" title="Link to this heading"></a></h2>
 <p>Once the CNN model has been converted into QNN format, the next step is to build it so it can run on the target device’s operating system with <code class="docutils literal notranslate"><span class="pre">qnn-model-lib-generator</span></code>.</p>
 <p>Based on the operating system and architecture of your target device, choose one of the following build instructions.</p>
 <div class="admonition warning">
@@ -200,7 +202,7 @@
 </li>
 </ol>
 <section id="step-4-use-the-built-model-on-specific-processors">
-<h2>Step 4. Use the built model on specific processors<a class="headerlink" href="#step-4-use-the-built-model-on-specific-processors" title="Link to this heading"></a></h2>
+<h3>Step 4. Use the built model on specific processors<a class="headerlink" href="#step-4-use-the-built-model-on-specific-processors" title="Link to this heading"></a></h3>
 <p>Now that you have an executable version of your model, the next step is to transfer the built model and all necessary files to the target processor, then to run inferences on it.</p>
 <ol class="arabic simple">
 <li><p>Install all necessary dependencies from Setup.</p></li>
@@ -277,9 +279,9 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 </div></blockquote>
 <p><strong>Sub-Step 3: Follow the steps below for whichever processor you would like to run your model on.</strong></p>
 <section id="cpu">
-<h3>CPU<a class="headerlink" href="#cpu" title="Link to this heading"></a></h3>
+<h4>CPU<a class="headerlink" href="#cpu" title="Link to this heading"></a></h4>
 <section id="transferring-over-all-relevant-files">
-<h4>Transferring over all relevant files<a class="headerlink" href="#transferring-over-all-relevant-files" title="Link to this heading"></a></h4>
+<h5>Transferring over all relevant files<a class="headerlink" href="#transferring-over-all-relevant-files" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>On the target device, open a terminal and make a destination folder by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mount<span class="w"> </span>-o<span class="w"> </span>remount,rw<span class="w"> </span>/
@@ -318,7 +320,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </ol>
 </section>
 <section id="doing-inferences-on-the-target-device-processor">
-<h4>Doing inferences on the target device processor<a class="headerlink" href="#doing-inferences-on-the-target-device-processor" title="Link to this heading"></a></h4>
+<h5>Doing inferences on the target device processor<a class="headerlink" href="#doing-inferences-on-the-target-device-processor" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>Open a terminal instance on the target device.
 1. Alternatively, you can <code class="docutils literal notranslate"><span class="pre">ssh</span></code> from your Linux host machine, run the following command to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into your target device.
@@ -388,9 +390,9 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </section>
 </section>
 <section id="gpu">
-<h3>GPU<a class="headerlink" href="#gpu" title="Link to this heading"></a></h3>
+<h4>GPU<a class="headerlink" href="#gpu" title="Link to this heading"></a></h4>
 <section id="id1">
-<h4>Transferring over all relevant files<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<h5>Transferring over all relevant files<a class="headerlink" href="#id1" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>On the target device, open a terminal and make a destination folder by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mount<span class="w"> </span>-o<span class="w"> </span>remount,rw<span class="w"> </span>/
@@ -429,7 +431,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </ol>
 </section>
 <section id="id2">
-<h4>Doing inferences on the target device processor<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<h5>Doing inferences on the target device processor<a class="headerlink" href="#id2" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>Open a terminal instance on the target device.
 1. Alternatively, you can <code class="docutils literal notranslate"><span class="pre">ssh</span></code> from your Linux host machine, run the following command to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into your target device.
@@ -499,13 +501,13 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </section>
 </section>
 <section id="dsp">
-<h3>DSP<a class="headerlink" href="#dsp" title="Link to this heading"></a></h3>
+<h4>DSP<a class="headerlink" href="#dsp" title="Link to this heading"></a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>DSP processors require quantized models instead of full precision models. If you do not have a quantized model, please follow <a class="reference internal" href="qnn_tutorial_linux_1.html"><span class="doc">Step 2</span></a> of the CNN to QNN tutorial to build one.</p>
 </div>
 <section id="id3">
-<h4>Transferring over all relevant files<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<h5>Transferring over all relevant files<a class="headerlink" href="#id3" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>On the target device, open a terminal and make a destination folder by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mount<span class="w"> </span>-o<span class="w"> </span>remount,rw<span class="w"> </span>/
@@ -560,7 +562,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </ol>
 </section>
 <section id="id4">
-<h4>Doing inferences on the target device processor<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<h5>Doing inferences on the target device processor<a class="headerlink" href="#id4" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>Open a terminal instance on the target device.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TARGET_USER</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">TARGET_IP</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -609,13 +611,13 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </section>
 </section>
 <section id="htp">
-<h3>HTP<a class="headerlink" href="#htp" title="Link to this heading"></a></h3>
+<h4>HTP<a class="headerlink" href="#htp" title="Link to this heading"></a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>HTP processors require quantized models instead of full precision models. If you do not have a quantized model, please follow <a class="reference internal" href="qnn_tutorial_linux_1.html"><span class="doc">Step 2</span></a> of the CNN to QNN tutorial to build one.</p>
 </div>
 <section id="additional-htp-required-setup">
-<h4>Additional HTP Required Setup<a class="headerlink" href="#additional-htp-required-setup" title="Link to this heading"></a></h4>
+<h5>Additional HTP Required Setup<a class="headerlink" href="#additional-htp-required-setup" title="Link to this heading"></a></h5>
 <p><em>Running the model on a target device’s HTP requires the generation of a **serialized context*</em>.*</p>
 <p><strong>On the Linux Host:</strong></p>
 <ol class="arabic">
@@ -671,7 +673,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </ol>
 </section>
 <section id="id5">
-<h4>Transferring over all relevant files<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<h5>Transferring over all relevant files<a class="headerlink" href="#id5" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>On the target device, open a terminal and make a destination folder by running:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mount<span class="w"> </span>-o<span class="w"> </span>remount,rw<span class="w"> </span>/
@@ -731,7 +733,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </ol>
 </section>
 <section id="id9">
-<h4>Doing inferences on the target device processor<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
+<h5>Doing inferences on the target device processor<a class="headerlink" href="#id9" title="Link to this heading"></a></h5>
 <ol class="arabic">
 <li><p>Open a terminal instance on the target device.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TARGET_USER</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">TARGET_IP</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -780,7 +782,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </section>
 </section>
 <section id="lpai">
-<h3>LPAI<a class="headerlink" href="#lpai" title="Link to this heading"></a></h3>
+<h4>LPAI<a class="headerlink" href="#lpai" title="Link to this heading"></a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>LPAI processors are designed for <strong>offline model preparation only</strong>. This means you must build the model first, then transfer it to the target device.</p>
@@ -845,6 +847,7 @@ lpai_graph
 <span class="w">              </span>--binary_file<span class="w"> </span>tmp
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 </section>
