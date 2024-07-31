@@ -19,7 +19,6 @@
         <script src="../_static/documentation_options.js?v=474e5199"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -51,15 +50,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conventions">Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#platform-differences">Platform differences</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#library-and-executable-program-naming-convention">Library and executable program naming convention</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#release-folder-for-different-platforms">Release folder for different platforms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#environment-setup-for-linux-and-windows">Environment setup for Linux and Windows</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#release-notes">Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-to-go">Where to go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference-material">Reference Material</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
@@ -92,60 +84,35 @@
              
   <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
-<section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading"></a></h2>
-<p>This document provides a reference guide for Qualcomm® AI Engine Direct software development kit (SDK).</p>
-<div class="admonition note" id="qnn-ai-engine-note">
+<p>Welcome to the Qualcomm® AI Engine Direct software development kit (aka the QNN SDK) documentation!</p>
+<p>The QNN SDK helps you build model files (e.g., from <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>) to run on various device processors (CPU, GPU, DSP, HTP, or LPAI) across multiple operating systems.</p>
+<p><a class="reference external" href="https://documents.lucid.app/documents/6c0d4dc4-2dd3-4186-9c60-915d23f515eb/pages/0_0?a=644&amp;x=-163&amp;y=-83&amp;w=1345&amp;h=926&amp;store=1&amp;accept=image%2F*&amp;auth=LCA%20a10a7cfe82c0570cb4fbea60cb06888e64bd3beb8679ef88c499e601dbd17d68-ts%3D1722055637">Lucid App Document</a></p>
+<section id="where-to-go">
+<h2>Where to go<a class="headerlink" href="#where-to-go" title="Link to this heading"></a></h2>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Qualcomm® AI Engine Direct is also referred to as Qualcomm Neural Network (QNN) in the source code and documentation.</p>
+<p>As you read through these pages, if you see any acronyms which you are not familiar with, please check the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/glossary.html">Glossary</a>.</p>
 </div>
-</section>
-<section id="conventions">
-<h2>Conventions<a class="headerlink" href="#conventions" title="Link to this heading"></a></h2>
-<p>Function declarations, function names, type declarations, filenames, directory names and library
-names are shown in a different font. For example: <code class="docutils literal notranslate"><span class="pre">#include</span></code></p>
-<p>Commands and code samples appear in a specially formatted code section. For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scale</span><span class="p">.</span>
-</pre></div>
-</div>
-<p>Mathematical expressions appear in a specially formatted math section. For example:</p>
-<div class="math notranslate nohighlight">
-\[y = x + 1\]</div>
-<p>Environment variables appear preceded by $, for example $QNN_SDK_ROOT.</p>
-</section>
-<section id="platform-differences">
-<span id="id1"></span><h2>Platform differences<a class="headerlink" href="#platform-differences" title="Link to this heading"></a></h2>
-<p>Qualcomm® AI Engine Direct supports both Windows and Linux platforms. There are several differences between
-Linux and Windows systems:</p>
-<section id="library-and-executable-program-naming-convention">
-<span id="id2"></span><h3>Library and executable program naming convention<a class="headerlink" href="#library-and-executable-program-naming-convention" title="Link to this heading"></a></h3>
-<p>On Linux, shared library names will be prefixed with <code class="docutils literal notranslate"><span class="pre">lib</span></code>, and have the <code class="docutils literal notranslate"><span class="pre">.so</span></code> extension.
-On Windows, shared library do not have a prefix and will have the <code class="docutils literal notranslate"><span class="pre">.dll</span></code> extension.</p>
-<p>On Linux, library names have the <code class="docutils literal notranslate"><span class="pre">.a</span></code> extension. On Windows, static use the <code class="docutils literal notranslate"><span class="pre">.lib</span></code> extension.
-The executables on Windows have the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> extension, while Linux executables do not.</p>
-<p>As an example, the QnnCpu backend library would be <code class="docutils literal notranslate"><span class="pre">libQnnCpu.so</span></code> on Linux and <code class="docutils literal notranslate"><span class="pre">QnnCpu.dll</span></code> on Windows.</p>
-</section>
-<section id="release-folder-for-different-platforms">
-<span id="id3"></span><h3>Release folder for different platforms<a class="headerlink" href="#release-folder-for-different-platforms" title="Link to this heading"></a></h3>
-<p>Users for Qualcomm® AI Engine Direct software development kit (SDK) can find the corresponding binaries and executables through
-relative folders. For example, for Linux and Windows platforms, users can find the specific path under the root of the SDK that indicates the platform:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>(For Linux-X86): /bin/x86_64-linux-clang.</p></li>
-<li><p>(For Windows-X86): /bin/x86_64-windows-msvc.</p></li>
-<li><p>(For Windows-aarch64): /bin/aarch64-windows-msvc.</p></li>
+<ul class="simple">
+<li><p><strong>To get started using the QNN SDK</strong>, follow the comprehensive <span class="xref std std-doc">CNN to QNN tutorial</span> which walks through the entire process from installing the SDK to executing inferences on the specific hardware you are interested in.</p></li>
+<li><p><strong>To install the QNN SDK</strong>, follow the <span class="xref std std-doc">Setup</span> guide which helps you download the SDK and all necessary dependencies (this is included in the above tutorial).</p></li>
+<li><p><strong>To understand the many features of the QNN SDK</strong>, read through the <span class="xref std std-doc">Overview</span> page which explains where the QNN SDK fits into the AI development stack.</p></li>
+<li><p><strong>For other more advanced tutorials</strong>, see the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/tutorials.html">Tutorials page</a>.</p></li>
+<li><p><strong>To benchmark your model’s performance on target hardware</strong>, see the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/benchmarking.html">Benchmarking page</a>.</p></li>
 </ul>
-</div></blockquote>
 </section>
-<section id="environment-setup-for-linux-and-windows">
-<span id="environment-setup-for-linux-windows"></span><h3>Environment setup for Linux and Windows<a class="headerlink" href="#environment-setup-for-linux-and-windows" title="Link to this heading"></a></h3>
-<p>Operation for model tools should follow the environment setup by platform dependencies as a prerequisite. See <a class="reference internal" href="setup.html"><span class="doc">Setup</span></a>
-for more information.</p>
-</section>
-</section>
-<section id="release-notes">
-<h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading"></a></h2>
-<p>Release Notes are available as QNN_ReleaseNotes.txt in the SDK.</p>
+<section id="reference-material">
+<h2>Reference Material<a class="headerlink" href="#reference-material" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/converters.html">Compiling from CNN to QNN via Converters</a> - Depending on the AI model you want to use, these allow you to convert them into the QNN SDK format which can be run across multiple processor types.</p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/tools.html">Tools</a> - This page lists out the various scripts which can help convert AI models, and which architectures they support.</p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/quantization.html">Quantization</a> - This explains how quantization works with the QNN SDK.</p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/backend.html">Reference docs for processor “backend” code</a>. These files are used when executing models on specific architectures.</p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/api.html">Reference docs for the QNN SDK’s interface</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/op_packages.html">Op packages guides and reference material</a> - Writing your own Op packages allow you to customize how built models are interpreted when being used for inferences.
+1. The existing Op packages are documented in the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/operations.html">“Operations” page</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/Legalnotice.html">Legal notice</a> - This outlines the legal guidelines and information related to the QNN SDK.</p></li>
+</ol>
 </section>
 </section>
 
