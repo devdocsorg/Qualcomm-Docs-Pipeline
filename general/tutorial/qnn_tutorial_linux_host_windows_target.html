@@ -22,8 +22,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="CNN to QNN for Windows Host" href="qnn_tutorial_windows_1.html" />
-    <link rel="prev" title="CNN to QNN for Linux Host on Linux Target" href="qnn_tutorial_linux_2.html" /> 
+    <link rel="next" title="CNN to QNN for Windows Host" href="qnn_tutorial_windows_host.html" />
+    <link rel="prev" title="CNN to QNN for Linux Host on Linux Target" href="qnn_tutorial_linux_host_linux_target.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,9 +53,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#getting-started">Getting Started</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="qnn_tutorial_landing.html">QNN Tutorial Landing Page</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="qnn_tutorial_linux_1.html">CNN to QNN for Linux Host</a></li>
-<li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_windows_1.html">CNN to QNN for Windows Host</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="qnn_tutorial_landing.html">Tutorial: Converting and executing a CNN model with QNN</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="qnn_tutorial_linux_host.html">CNN to QNN for Linux Host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_windows_host.html">CNN to QNN for Windows Host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_windows_host.html#tutorial-setup">1. Tutorial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_windows_host.html#converting-the-cnn-model-into-a-qnn-model">2. Converting the CNN model into a QNN model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_windows_host.html#build-the-model-for-a-target-device">3. Build the Model for a Target Device</a></li>
 </ul>
 </li>
 </ul>
@@ -84,8 +87,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
-          <li class="breadcrumb-item"><a href="qnn_tutorial_landing.html">QNN Tutorial Landing Page</a></li>
-          <li class="breadcrumb-item"><a href="qnn_tutorial_linux_1.html">CNN to QNN for Linux Host</a></li>
+          <li class="breadcrumb-item"><a href="qnn_tutorial_landing.html">Tutorial: Converting and executing a CNN model with QNN</a></li>
+          <li class="breadcrumb-item"><a href="qnn_tutorial_linux_host.html">CNN to QNN for Linux Host</a></li>
       <li class="breadcrumb-item active">Windows Target Device (x86_64 / Arm 64 / Snapdragon Architectures)</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -99,7 +102,7 @@
 <h1>Windows Target Device (x86_64 / Arm 64 / Snapdragon Architectures)<a class="headerlink" href="#windows-target-device-x86-64-arm-64-snapdragon-architectures" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is <strong>Part 2</strong> of the CNN to QNN tutorial for Windows host machines. If you have not completed Part 1, please do so <a class="reference internal" href="qnn_tutorial_linux_1.html"><span class="doc">here</span></a>.</p>
+<p>This is <strong>Part 2</strong> of the CNN to QNN tutorial for Windows host machines. If you have not completed Part 1, please do so <a class="reference internal" href="qnn_tutorial_windows_host.html"><span class="doc">here</span></a>.</p>
 </div>
 <section id="step-3-model-build-on-windows-host">
 <h2>Step 3: Model Build on Windows Host<a class="headerlink" href="#step-3-model-build-on-windows-host" title="Link to this heading"></a></h2>
@@ -406,7 +409,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 <h3>DSP<a class="headerlink" href="#dsp" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>DSP processors require quantized models instead of full precision models. If you do not have a quantized model, please follow <a class="reference internal" href="qnn_tutorial_linux_1.html"><span class="doc">Step 2</span></a> of the CNN to QNN tutorial to build one.</p>
+<p>DSP processors require quantized models instead of full precision models. If you do not have a quantized model, please follow <a class="reference internal" href="qnn_tutorial_windows_host.html"><span class="doc">Step 2</span></a> of the CNN to QNN tutorial to build one.</p>
 </div>
 <section id="id3">
 <h4>Transferring over all relevant files<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
@@ -527,7 +530,7 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 <h3>HTP<a class="headerlink" href="#htp" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>HTP processors require quantized models instead of floating point models. If you do not have a quantized model, please follow <a class="reference internal" href="qnn_tutorial_linux_1.html"><span class="doc">Step 2</span></a> of the CNN to QNN tutorial to build one.</p>
+<p>HTP processors require quantized models instead of floating point models. If you do not have a quantized model, please follow <a class="reference internal" href="qnn_tutorial_windows_host.html"><span class="doc">Step 2</span></a> of the CNN to QNN tutorial to build one.</p>
 </div>
 <section id="additional-htp-required-setup">
 <h4>Additional HTP Required Setup<a class="headerlink" href="#additional-htp-required-setup" title="Link to this heading"></a></h4>
@@ -722,11 +725,11 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
 </pre></div>
 </div>
 <p>To configure <code class="docutils literal notranslate"><span class="pre">lpaiParams.conf</span></code>, consider using the following optional settings:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">lpai_backe</span><span class="kc">n</span><span class="err">d</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>lpai_backend
 <span class="w">   </span><span class="s2">&quot;target_env&quot;</span><span class="w">              </span><span class="s2">&quot;arm/adsp/x86/tensilica, default adsp&quot;</span>
 <span class="w">   </span><span class="s2">&quot;enable_hw_ver&quot;</span><span class="w">           </span><span class="s2">&quot;v1/v2/v3/v4, default v4&quot;</span>
-<span class="err">lpai_graph</span>
-<span class="w">   </span><span class="err">prepare</span>
+lpai_graph
+<span class="w">   </span>prepare
 <span class="w">      </span><span class="s2">&quot;enable_layer_fusion&quot;</span><span class="w">     </span><span class="s2">&quot;true/false,     default true&quot;</span>
 <span class="w">      </span><span class="s2">&quot;enable_batchnorm_fold&quot;</span><span class="w">   </span><span class="s2">&quot;true/false,     default false&quot;</span>
 <span class="w">      </span><span class="s2">&quot;enable_channel_align&quot;</span><span class="w">    </span><span class="s2">&quot;true/false,     default false&quot;</span>
@@ -756,8 +759,8 @@ scp<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</sp
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="qnn_tutorial_linux_2.html" class="btn btn-neutral float-left" title="CNN to QNN for Linux Host on Linux Target" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="qnn_tutorial_windows_1.html" class="btn btn-neutral float-right" title="CNN to QNN for Windows Host" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="qnn_tutorial_linux_host_linux_target.html" class="btn btn-neutral float-left" title="CNN to QNN for Linux Host on Linux Target" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qnn_tutorial_windows_host.html" class="btn btn-neutral float-right" title="CNN to QNN for Windows Host" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

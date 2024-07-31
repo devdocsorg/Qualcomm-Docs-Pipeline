@@ -21,7 +21,9 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Linux Target Device (Android / Linux Embedded / Ubuntu)" href="qnn_tutorial_windows_host_linux_target.html" />
+    <link rel="prev" title="Windows Target Device (x86_64 / Arm 64 / Snapdragon Architectures)" href="qnn_tutorial_linux_host_windows_target.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,10 +48,27 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#getting-started">Getting Started</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="qnn_tutorial_landing.html">Tutorial: Converting and executing a CNN model with QNN</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_linux_host.html">CNN to QNN for Linux Host</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">CNN to QNN for Windows Host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tutorial-setup">1. Tutorial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#converting-the-cnn-model-into-a-qnn-model">2. Converting the CNN model into a QNN model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-model-for-a-target-device">3. Build the Model for a Target Device</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#advanced">Advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#custom-operators">Custom Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#migrating">Migrating</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 </ul>
 
@@ -67,6 +86,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+          <li class="breadcrumb-item"><a href="qnn_tutorial_landing.html">Tutorial: Converting and executing a CNN model with QNN</a></li>
       <li class="breadcrumb-item active">CNN to QNN for Windows Host</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -85,44 +106,67 @@
 <li><p>Build that model for a specific target device operating system. (Ex. Android)</p></li>
 <li><p>Transfer and use the model to make inferences on the desired processing unit. (Ex. GPU)</p></li>
 </ol>
-<p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/overview.html#supported-snapdragon-devices">Supported Snapdragon Devices</a></p>
+<figure class="align-center">
+<img alt="Model Workflow" src="../../_images/qnn_introduction_workflow.png" />
+</figure>
+</section>
 <section id="tutorial-setup">
-<h2>Tutorial Setup<a class="headerlink" href="#tutorial-setup" title="Link to this heading"></a></h2>
+<h1>1. Tutorial Setup<a class="headerlink" href="#tutorial-setup" title="Link to this heading"></a></h1>
 <section id="install-the-qnn-sdk">
-<h3>Install the QNN SDK<a class="headerlink" href="#install-the-qnn-sdk" title="Link to this heading"></a></h3>
+<h2>Install the QNN SDK<a class="headerlink" href="#install-the-qnn-sdk" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>Follow the instructions in Setup to install the QNN SDK.
-1. Make sure to install the optional Tensorflow dependency as this tutorial will use a Tensorflow model. (See Step 3 in Setup for more instructions).</p></li>
+<li><dl class="simple">
+<dt>Follow the instructions in Setup to install the QNN SDK.</dt><dd><ol class="arabic simple">
+<li><p>Make sure to install the optional Tensorflow dependency as this tutorial will use a Tensorflow model. (See Step 3 in Setup for more instructions).</p></li>
+</ol>
+</dd>
+</dl>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Using the same Powershell terminal for the Setup and these steps will speed up the process as some necessary setup steps only affect the terminal scope.</p>
 </div>
-<ol class="arabic" start="2">
-<li><p>Check that <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> is set to the folder just <strong>inside</strong> <code class="docutils literal notranslate"><span class="pre">qairt</span></code> by running <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$env:QNN_SDK_ROOT</span></code>.
-1. You should see the path to the folder name inside <code class="docutils literal notranslate"><span class="pre">qairt</span></code> (Ex. <code class="docutils literal notranslate"><span class="pre">.../qairt/2.22.6.240515</span></code>)
-2. If <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> is not set:</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple" start="2">
+<li><dl class="simple">
+<dt>Check that <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> is set to the folder just <strong>inside</strong> <code class="docutils literal notranslate"><span class="pre">qairt</span></code> by running <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$env:QNN_SDK_ROOT</span></code>.</dt><dd><ol class="arabic simple">
+<li><p>You should see the path to the folder name inside <code class="docutils literal notranslate"><span class="pre">qairt</span></code> (Ex. <code class="docutils literal notranslate"><span class="pre">.../qairt/2.22.6.240515</span></code>)</p></li>
+<li><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> is not set:</dt><dd><ol class="arabic simple">
 <li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">qairt/&lt;QNN_SDK_ROOT_LOCATION&gt;/bin</span></code></p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">./envsetup.ps1</span></code> to set the environment variable. Note: These changes will only apply to the current Powershell instance.</p></li>
 <li><p>Check again by running <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$env:QNN_SDK_ROOT</span></code> and run <code class="docutils literal notranslate"><span class="pre">./envsetup.ps1</span></code> to set it.</p></li>
 </ol>
-</div></blockquote>
+</dd>
+</dl>
 </li>
-<li><p>Ensure you are in the proper virtual environment for Python.
-1. If you are not in a <code class="docutils literal notranslate"><span class="pre">venv</span></code>, see Step 2 of Setup to install / activate your environment.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Ensure you are in the proper virtual environment for Python.</dt><dd><ol class="arabic simple">
+<li><p>If you are not in a <code class="docutils literal notranslate"><span class="pre">venv</span></code>, see Step 2 of Setup to install / activate your environment.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
 </ol>
 </section>
 <section id="set-up-the-example-tensorflow-model">
-<h3>Set Up The Example Tensorflow Model<a class="headerlink" href="#set-up-the-example-tensorflow-model" title="Link to this heading"></a></h3>
+<h2>Set Up The Example Tensorflow Model<a class="headerlink" href="#set-up-the-example-tensorflow-model" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">tensorflow</span></code> to verify that <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> is installed properly.
-1. If <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> is not found, follow the steps in Step 3 of the Setup instructions to install Tensorflow.</p></li>
+<li><dl class="simple">
+<dt>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">tensorflow</span></code> to verify that <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> is installed properly.</dt><dd><ol class="arabic simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> is not found, follow the steps in Step 3 of the Setup instructions to install Tensorflow.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
 <li><p>Run the following 3 commands below to set the <code class="docutils literal notranslate"><span class="pre">TENSORFLOW_HOME</span></code> environment variable.</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$tensorflowLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>tensorflow<span class="w"> </span><span class="p">|</span><span class="w"> </span>Select-String<span class="w"> </span>-Pattern<span class="w"> </span><span class="s1">&#39;^Location: &#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ForEach-Object<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">$_</span>.ToString<span class="o">()</span>.Split<span class="o">(</span><span class="s1">&#39; &#39;</span><span class="o">)[</span><span class="m">1</span><span class="o">]</span>.Trim<span class="o">()</span><span class="w"> </span><span class="o">})</span><span class="p">;</span>
-<span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="s1">&#39;TENSORFLOW_HOME&#39;</span>,<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$tensorflowLocation</span><span class="s2">\\tensorflow&quot;</span>,<span class="w"> </span><span class="s1">&#39;User&#39;</span><span class="o">)</span><span class="p">;</span>
+<span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="s1">&#39;TENSORFLOW_HOME&#39;</span>,<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$tensorflowLocation</span><span class="s2">\tensorflow&quot;</span>,<span class="w"> </span><span class="s1">&#39;User&#39;</span><span class="o">)</span><span class="p">;</span>
 <span class="nv">$env</span>:TENSORFLOW_HOME<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>System.Environment<span class="o">]</span>::GetEnvironmentVariable<span class="o">(</span><span class="s1">&#39;TENSORFLOW_HOME&#39;</span>,<span class="w"> </span><span class="s1">&#39;User&#39;</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -130,33 +174,32 @@
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">TENSORFLOW_HOME</span></code> is needed because the <code class="docutils literal notranslate"><span class="pre">setup_inceptionv3.py</span></code> script uses TensorFlow utilities like <code class="docutils literal notranslate"><span class="pre">optimize_for_inference.py</span></code>, which are present in the TensorFlow installation directory.</p>
 </div>
-<ol class="arabic" start="3">
+<ol class="arabic simple" start="3">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">$env:TENSORFLOW_HOME</span></code> to verify that the environment variable was set properly.</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/scripts/setup_inceptionv3.py</span> <span class="pre">-a</span> <span class="pre">~/tmpdir</span> <span class="pre">-d</span></code>.</p>
-<p>This will create the test data for this tutorial:</p>
-<ol class="arabic simple">
-<li><p>A model file at:
-<code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/tensorflow/inception_v3_2016_08_28_frozen.pb</span></code></p></li>
-<li><p>Raw images at:
-<code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/data/cropped</span></code></p></li>
-</ol>
+<li><dl class="simple">
+<dt>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/scripts/setup_inceptionv3.py</span> <span class="pre">-a</span> <span class="pre">~/tmpdir</span> <span class="pre">-d</span></code> to download the example data for this tutorial.</dt><dd><p>1. A model file at:
+<code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/tensorflow/inception_v3_2016_08_28_frozen.pb</span></code>
+2. Raw images at:
+<code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/data/cropped</span></code></p>
+</dd>
+</dl>
 </li>
 </ol>
 </section>
 </section>
 <section id="converting-the-cnn-model-into-a-qnn-model">
-<h2>Converting the CNN model into a QNN model<a class="headerlink" href="#converting-the-cnn-model-into-a-qnn-model" title="Link to this heading"></a></h2>
+<h1>2. Converting the CNN model into a QNN model<a class="headerlink" href="#converting-the-cnn-model-into-a-qnn-model" title="Link to this heading"></a></h1>
 <p>Converting models into QNN format allows them to be built for specific target device operating systems and processors.</p>
-<p>This tutorial is using a tensorflow model, so we can convert by running the <code class="docutils literal notranslate"><span class="pre">qnn-tensorflow-converter</span></code>.</p>
-<p>You can use QNN to convert either floating point models or quantized models.</p>
+<p>This tutorial is using a tensorflow model, so we can convert by running the <code class="docutils literal notranslate"><span class="pre">qnn-tensorflow-converter</span></code>. If you are using another type of model, you can look at the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/tools.html">Tools page</a> for a table of potential scripts to help convert them into QNN format. They will have a similar <code class="docutils literal notranslate"><span class="pre">qnn-model-type-converter</span></code> naming convention.</p>
+<p>You can use QNN to convert either full precision models or quantized models.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>HTP and DSP target devices MUST use quantized models.</p>
 </div>
-<section id="floating-point-model-conversion">
-<h3>Floating Point Model Conversion<a class="headerlink" href="#floating-point-model-conversion" title="Link to this heading"></a></h3>
+<section id="full-precision-model-conversion">
+<h2>Full Precision Model Conversion<a class="headerlink" href="#full-precision-model-conversion" title="Link to this heading"></a></h2>
 <p>Run the following script:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="se">\\</span>bin<span class="se">\\</span>x86_64-windows-msvc<span class="se">\\</span>qnn-tensorflow-converter<span class="w"> </span><span class="sb">`</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="se">\b</span>in<span class="se">\x</span>86_64-windows-msvc<span class="se">\q</span>nn-tensorflow-converter<span class="w"> </span><span class="sb">`</span>
 <span class="w">  </span>--input_network<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="s2">/examples/Models/InceptionV3/tensorflow/inception_v3_2016_08_28_frozen.pb&quot;</span><span class="w"> </span><span class="sb">`</span>
 <span class="w">  </span>--input_dim<span class="w"> </span>input<span class="w"> </span><span class="m">1</span>,299,299,3<span class="w"> </span><span class="sb">`</span>
 <span class="w">  </span>--out_node<span class="w"> </span>InceptionV3/Predictions/Reshape_1<span class="w"> </span><span class="sb">`</span>
@@ -183,10 +226,10 @@
 <p>You can find the artifacts in the <code class="docutils literal notranslate"><span class="pre">$env:QNN_SDK_ROOT/examples/Models/InceptionV3/model</span></code> directory.</p>
 </section>
 <section id="quantized-model-conversion">
-<h3>Quantized Model Conversion<a class="headerlink" href="#quantized-model-conversion" title="Link to this heading"></a></h3>
-<p>To use a quantized model instead of a floating point model, you will need to pass in the <code class="docutils literal notranslate"><span class="pre">--input_list</span></code> flag to specify the input.</p>
+<h2>Quantized Model Conversion<a class="headerlink" href="#quantized-model-conversion" title="Link to this heading"></a></h2>
+<p>To create a quantized model instead of a full precision model, you will need to pass in the <code class="docutils literal notranslate"><span class="pre">--input_list</span></code> flag to specify the input.</p>
 <ol class="arabic simple">
-<li><p>Prepare input data. (For this example, the data has already been prepared in <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/data/cropped/raw_list.txt</span></code>).</p></li>
+<li><p>In a real situation, you would need to prepare your input data before running this command. For this tutorial, that data has already been prepared in <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/data/cropped/raw_list.txt</span></code>. (No action required)</p></li>
 <li><p>Run the below command:</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/bin/x86_64-linux-clang/qnn-tensorflow-converter<span class="w"> </span><span class="sb">`</span>
@@ -215,29 +258,22 @@
 </section>
 </section>
 <section id="build-the-model-for-a-target-device">
-<h2>Build the Model for a Target Device<a class="headerlink" href="#build-the-model-for-a-target-device" title="Link to this heading"></a></h2>
+<h1>3. Build the Model for a Target Device<a class="headerlink" href="#build-the-model-for-a-target-device" title="Link to this heading"></a></h1>
+<p>Based on the target architecture for your <strong>target device</strong>, choose one of the following guides to follow:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qnn_tutorial_windows_2.html">Windows Target Device (10, 11, and Snapdragon)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#build-your-qnn-model-for-target-device-architecture">Build your QNN model for target device architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#use-the-built-model-on-specific-processors">Use the built model on specific processors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#shared-steps">Shared Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#cpu">CPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#gpu">GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#dsp">DSP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#htp">HTP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qnn_tutorial_windows_2.html#lpai">LPAI</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="qnn_tutorial_windows_host_linux_target.html">Linux Target Device (Android / Linux Embedded / Ubuntu)</a></li>
 </ul>
 </div>
-</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="qnn_tutorial_linux_host_windows_target.html" class="btn btn-neutral float-left" title="Windows Target Device (x86_64 / Arm 64 / Snapdragon Architectures)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qnn_tutorial_windows_host_linux_target.html" class="btn btn-neutral float-right" title="Linux Target Device (Android / Linux Embedded / Ubuntu)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
