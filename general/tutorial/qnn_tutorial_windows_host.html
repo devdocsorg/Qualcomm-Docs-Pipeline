@@ -56,9 +56,6 @@
 <li class="toctree-l3 current"><a class="reference internal" href="qnn_tutorial_landing.html">Tutorial: Converting and executing a CNN model with QNN</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="qnn_tutorial_linux_host.html">CNN to QNN for Linux Host</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">CNN to QNN for Windows Host</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tutorial-setup">1. Tutorial Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#converting-the-cnn-model-into-a-qnn-model">2. Converting the CNN model into a QNN model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#build-the-model-for-a-target-device">3. Build the Model for a Target Device</a></li>
 </ul>
 </li>
 </ul>
@@ -109,11 +106,10 @@
 <figure class="align-center">
 <img alt="Model Workflow" src="../../_images/qnn_introduction_workflow.png" />
 </figure>
-</section>
-<section id="tutorial-setup">
-<h1>1. Tutorial Setup<a class="headerlink" href="#tutorial-setup" title="Link to this heading"></a></h1>
+<section id="step-1-tutorial-setup">
+<h2>Step 1: Tutorial Setup<a class="headerlink" href="#step-1-tutorial-setup" title="Link to this heading"></a></h2>
 <section id="install-the-qnn-sdk">
-<h2>Install the QNN SDK<a class="headerlink" href="#install-the-qnn-sdk" title="Link to this heading"></a></h2>
+<h3>Install the QNN SDK<a class="headerlink" href="#install-the-qnn-sdk" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>Follow the instructions in Setup to install the QNN SDK.</dt><dd><ol class="arabic simple">
@@ -154,7 +150,7 @@
 </ol>
 </section>
 <section id="set-up-the-example-tensorflow-model">
-<h2>Set Up The Example Tensorflow Model<a class="headerlink" href="#set-up-the-example-tensorflow-model" title="Link to this heading"></a></h2>
+<h3>Set Up The Example Tensorflow Model<a class="headerlink" href="#set-up-the-example-tensorflow-model" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">tensorflow</span></code> to verify that <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> is installed properly.</dt><dd><ol class="arabic simple">
@@ -188,7 +184,7 @@
 </section>
 </section>
 <section id="converting-the-cnn-model-into-a-qnn-model">
-<h1>2. Converting the CNN model into a QNN model<a class="headerlink" href="#converting-the-cnn-model-into-a-qnn-model" title="Link to this heading"></a></h1>
+<h2>2. Converting the CNN model into a QNN model<a class="headerlink" href="#converting-the-cnn-model-into-a-qnn-model" title="Link to this heading"></a></h2>
 <p>Converting models into QNN format allows them to be built for specific target device operating systems and processors.</p>
 <p>This tutorial is using a tensorflow model, so we can convert by running the <code class="docutils literal notranslate"><span class="pre">qnn-tensorflow-converter</span></code>. If you are using another type of model, you can look at the <a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-50/tools.html">Tools page</a> for a table of potential scripts to help convert them into QNN format. They will have a similar <code class="docutils literal notranslate"><span class="pre">qnn-model-type-converter</span></code> naming convention.</p>
 <p>You can use QNN to convert either full precision models or quantized models.</p>
@@ -197,7 +193,7 @@
 <p>HTP and DSP target devices MUST use quantized models.</p>
 </div>
 <section id="full-precision-model-conversion">
-<h2>Full Precision Model Conversion<a class="headerlink" href="#full-precision-model-conversion" title="Link to this heading"></a></h2>
+<h3>Full Precision Model Conversion<a class="headerlink" href="#full-precision-model-conversion" title="Link to this heading"></a></h3>
 <p>Run the following script:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="se">\b</span>in<span class="se">\x</span>86_64-windows-msvc<span class="se">\q</span>nn-tensorflow-converter<span class="w"> </span><span class="sb">`</span>
 <span class="w">  </span>--input_network<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="s2">/examples/Models/InceptionV3/tensorflow/inception_v3_2016_08_28_frozen.pb&quot;</span><span class="w"> </span><span class="sb">`</span>
@@ -226,7 +222,7 @@
 <p>You can find the artifacts in the <code class="docutils literal notranslate"><span class="pre">$env:QNN_SDK_ROOT/examples/Models/InceptionV3/model</span></code> directory.</p>
 </section>
 <section id="quantized-model-conversion">
-<h2>Quantized Model Conversion<a class="headerlink" href="#quantized-model-conversion" title="Link to this heading"></a></h2>
+<h3>Quantized Model Conversion<a class="headerlink" href="#quantized-model-conversion" title="Link to this heading"></a></h3>
 <p>To create a quantized model instead of a full precision model, you will need to pass in the <code class="docutils literal notranslate"><span class="pre">--input_list</span></code> flag to specify the input.</p>
 <ol class="arabic simple">
 <li><p>In a real situation, you would need to prepare your input data before running this command. For this tutorial, that data has already been prepared in <code class="docutils literal notranslate"><span class="pre">${QNN_SDK_ROOT}/examples/Models/InceptionV3/data/cropped/raw_list.txt</span></code>. (No action required)</p></li>
@@ -258,13 +254,14 @@
 </section>
 </section>
 <section id="build-the-model-for-a-target-device">
-<h1>3. Build the Model for a Target Device<a class="headerlink" href="#build-the-model-for-a-target-device" title="Link to this heading"></a></h1>
+<h2>3. Build the Model for a Target Device<a class="headerlink" href="#build-the-model-for-a-target-device" title="Link to this heading"></a></h2>
 <p>Based on the target architecture for your <strong>target device</strong>, choose one of the following guides to follow:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="qnn_tutorial_windows_host_linux_target.html">Linux Target Device (Android / Linux Embedded / Ubuntu)</a></li>
 </ul>
 </div>
+</section>
 </section>
 
 
