@@ -150,10 +150,13 @@
 <li><p>Open a terminal.</p></li>
 <li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">qairt/&lt;QNN_SDK_VERSION&gt;</span></code> inside the unzipped QNN SDK.
 1. Replace <code class="docutils literal notranslate"><span class="pre">&lt;QNN_SDK_VERSION&gt;</span></code> with the name of the file directly under <code class="docutils literal notranslate"><span class="pre">qairt</span></code> - it should look something like <code class="docutils literal notranslate"><span class="pre">2.22.6.240515</span></code>.</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">bin</span></code>.</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">./envsetup.sh</span></code>.</p>
+<li><p>Setup the environment using the below commands:</p>
 <blockquote>
-<div><p>This will automatically set the environment variables <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> and <code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code>.</p>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Run<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>bin
+Run<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./envsetup.sh
+</pre></div>
+</div>
+<p>This will automatically set the environment variables <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> and <code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code>.</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> - This points to the <code class="docutils literal notranslate"><span class="pre">qairt/QNN_SDK_ROOT</span></code> folder where the QNN SDK code lives.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code> - This also points to <code class="docutils literal notranslate"><span class="pre">qairt/QNN_SDK_ROOT</span></code> and is an older name for this SDK.</p></li>
@@ -164,6 +167,8 @@
 </div>
 </div></blockquote>
 </li>
+</ol>
+<ol class="arabic" start="5">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">'export</span> <span class="pre">QNN_SDK_ROOT=&quot;${QNN_SDK_ROOT}&quot;'</span> <span class="pre">&gt;&gt;</span> <span class="pre">~/.bashrc</span></code> to save this for future bash terminals.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">${QNN_SDK_ROOT}/bin/check-linux-dependency.sh</span></code>.</p>
 <blockquote>

@@ -173,16 +173,19 @@
 </dd>
 </dl>
 </li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">./bin</span></code>.</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">Unblock-File</span> <span class="pre">./envsetup.ps1</span></code>.</p>
+<li><p>Setup the environment using the below commands:</p>
 <blockquote>
-<div><p>This will allow <code class="docutils literal notranslate"><span class="pre">envsetup.ps1</span></code> to be run on your computer.</p>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>bin
+Unblock-File<span class="w"> </span>./envsetup.ps1
+./envsetup.ps1
+./envsetup.ps1
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">./envsetup.ps1</span></code>.</p>
+<li><p>This will automatically set the environment variables <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> and <code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code>.</p>
 <blockquote>
-<div><p>This will automatically set the environment variables <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> and <code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code>.</p>
-<ol class="arabic simple">
+<div><ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code> - This points to the <code class="docutils literal notranslate"><span class="pre">qairt/QNN_SDK_ROOT</span></code> folder where the QNN SDK code lives.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SNPE_ROOT</span></code> - This stands for <code class="docutils literal notranslate"><span class="pre">Snapdragon</span> <span class="pre">Neural</span> <span class="pre">Processing</span> <span class="pre">Engine</span></code> (a synonym for Qualcomm® Neural Processing SDK). This SDK is included as part of the QNN SDK, so the variable points to the same folder as <code class="docutils literal notranslate"><span class="pre">QNN_SDK_ROOT</span></code>.</p></li>
 </ol>
