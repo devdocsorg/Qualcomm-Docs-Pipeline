@@ -394,7 +394,7 @@ td > p:has(a) {
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 250px; /* Increased width to accommodate more text */
     background-color: black;
     color: #fff;
     text-align: center;
@@ -402,9 +402,9 @@ td > p:has(a) {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%; 
+    bottom: 150%; /* Adjusted positioning */
     left: 50%;
-    margin-left: -60px;
+    margin-left: -125px; /* Centering the tooltip */
     opacity: 0;
     transition: opacity 0.3s;
   }
@@ -413,4 +413,5 @@ td > p:has(a) {
     visibility: visible;
     opacity: 1;
   }
+  
   
